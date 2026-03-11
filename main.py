@@ -1,18 +1,9 @@
 import random
-
-
-def generate_strd_instance(seed, target_depth, D, p_contradict):
-
-    chain = []
-
-    for i in range(D):
-        pass
-
-    pass
+from strd.core.state import test_print
 
 
 def main():
-    print("Hello world")
+    test_print()
 
 
 if __name__ == "__main__":

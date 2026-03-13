@@ -1,9 +1,12 @@
-import random
-from strd.core.state import test_print
+from strd.core.state import State
 
 
 def main():
-    test_print()
+    entities = ["Andy", "Lucy", "Bob", "John"]
+    objects = ["Apple", "Orange", "Pencil", "Avocado"]
+    locations = ["Bedroom", "Living room", "Italy", "Prison"]
+    state = State(entities=entities, objects=objects, locations=locations)
+    print(state.entities_loc)
 
 
 if __name__ == "__main__":

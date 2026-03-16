@@ -6,7 +6,8 @@ def main():
     objects = ["Apple", "Orange", "Pencil", "Avocado"]
     locations = ["Bedroom", "Living room", "Italy", "Prison"]
     state = State(entities=entities, objects=objects, locations=locations)
-    print(state.entities_loc)
+    print(state.object_holder)
+    print(state.drop_object)
 
 
 if __name__ == "__main__":

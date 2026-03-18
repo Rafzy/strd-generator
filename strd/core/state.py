@@ -14,7 +14,7 @@ class State:
             self.entity_loc[e] = location
 
         self.object_holder = {}  # object -> entity (Andy is holding an apple) if object is held by someone
-        self.object_loc = {}  # object -> location (The apple is under a table) if obbject isn't held by someone
+        self.object_loc = {}  # object -> location (The apple is under a table) if object isn't held by someone
 
         for obj in objects:
             # Half of the time, the object will either be held by someone, or put down somewhere
@@ -25,17 +25,19 @@ class State:
                 location = random.choice(locations)
                 self.object_loc[obj] = location
 
+            assert not (obj in self.object_holder and obj in self.object_loc), (
+                f"Inconsistent state for {obj}"
+            )
+
     # Incase we need to know who has what and where is what
-    def where_is_obj(self, object):
+    def where_is_obj(self, obj):
         """
         Returns the location of an object
         If the object is being held by an entity, return None
         """
-        if object in self.object_holder:
-            # Maybe it's better to return none when it's being held by an entity
-            # holder = self.object_holder[object]
-            # return self.entity_loc[holder]
-            return None
+        if obj in self.object_holder:
+            holder = self.object_holder[object]
+            return self.entity_loc[holder]
         else:
             return self.object_loc[object]
 
@@ -45,7 +47,7 @@ class State:
         """
         return self.entity_loc[entity]
 
-    def who_has(self, object):
+    def who_has(self, obj):
         """
         Returns an entity that's holding the given object
         Returns none if the object isn't being held
@@ -60,27 +62,35 @@ class State:
         """
         Returns a list of objects given a location
         """
-        objects = [object for object, loc in self.object_loc if loc == location]
+        objects = [object for object, loc in self.object_loc.items() if loc == location]
         return objects
 
     def entities_at(self, location):
         """
         Returns a list of entities given a location
         """
-        entities = [entity for entity, loc in self.entity_loc if loc == location]
+        entities = [
+            entity for entity, loc in self.entity_loc.items() if loc == location
+        ]
         return entities
 
-    def assign_object_holder(self, object, entity):
+    def assign_object_holder(self, obj, entity):
         """
         Assigns an object to an entity
         """
-        self.object_holder[object] = entity
+        self.object_loc.pop(obj, None)
+        self.object_holder[obj] = entity
 
-    def assign_object_loc(self, object, location):
+        assert obj not in self.object_loc
+
+    def assign_object_loc(self, obj, location):
         """
         Assigns an object to a location
         """
-        self.object_loc[object] = location
+        self.object_holder.pop(obj, None)
+        self.object_loc[obj] = location
+
+        assert obj not in self.object_holder
 
     def assign_ent_loc(self, entity, location):
         """
@@ -88,72 +98,77 @@ class State:
         """
         self.entity_loc[entity] = location
 
-    def del_object_holder(self, object):
+    def del_object_holder(self, obj):
         """
         Deletes an object holder record
         """
-        del self.object_holder[object]
+        self.object_holder.pop(obj, None)
 
-    def del_object_loc(self, object):
+    def del_object_loc(self, obj):
         """
         Deletes an object location record
         """
-        del self.object_loc[object]
+        self.object_loc.pop(obj, None)
 
     def del_entity_loc(self, entity):
         """
         Deletes an entity location record
         """
-        del self.entity_loc[entity]
+        self.entity_loc.pop(entity, None)
 
-    def drop_object(self, object):
+    def drop_object(self, obj):
         """
         Takes one object, if that object isn't being held, return 1
 
         If it exists in object_holder, delete that record
         Assign object_loc to the previous holder's location and return 0
         """
-        holder = self.who_has(object)
+        holder = self.who_has(obj)
 
         if holder is None:
-            return 1
+            return False
 
         holder_loc = self.where_is_ent(holder)
 
-        self.del_object_holder(object)
-        self.assign_object_loc(object, holder_loc)
+        self.assign_object_loc(obj, holder_loc)
 
-        return 0
+        return True
 
-    def pick_object(self, object):
+    def pick_object(self, obj):
         """
-        Takes one object, if it's already being held, return 1
+        Takes one object, if it's already being held, return False
 
         else, choose a random entity that's at the same location of the object,
-        and assign that object to the entity and return 0
+        and assign that object to the entity and return True
         """
-        if self.who_has(object) is not None:
-            return 1
+        if self.who_has(obj) is not None:
+            return False
 
-        obj_loc = self.where_is_obj(object)
+        obj_loc = self.where_is_obj(obj)
 
         ent_same_loc = self.entities_at(obj_loc)
 
+        if not ent_same_loc:
+            return False
+
         random_ent = random.choice(ent_same_loc)
 
-        self.assign_object_holder(object, random_ent)
-        self.del_object_loc(object)
+        self.assign_object_holder(obj, random_ent)
+        return True
 
-        return 0
-
-    def pass_object(self, object, entity):
+    def pass_obj(self, obj):
         """
-        Passes an object from one entity to another random entity at the same location, then return 0
+        Takes one object, if that object isn't being held, return 1
 
-        returns 1 if an object isn't being held by an entity
+        Pass the object from one entity to another at another location
         """
-        if who_has(object) is None:
-            return 1
+
+        holder = self.who_has(obj)
+
+        if holder is None:
+            return False
+
+        pass
 
     def move_entity(self, entity):
         """
@@ -164,7 +179,7 @@ class State:
         new_loc = random.choice(other_locs)
         self.assign_ent_loc(entity, new_loc)
 
-    def move_object(self, object):
+    def move_object(self, obj):
         """
         Takes one object, if the object is held, it can randomly be
         dropped to the location of the entity, or given to another random entity at the

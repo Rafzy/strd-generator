@@ -158,17 +158,26 @@ class State:
 
     def pass_obj(self, obj):
         """
-        Takes one object, if that object isn't being held, return 1
+        Takes one object, if that object isn't being held, return False
 
-        Pass the object from one entity to another at another location
+        Pass the object from one entity to another at the same location
         """
-
         holder = self.who_has(obj)
 
         if holder is None:
             return False
 
-        pass
+        holder_loc = self.where_is_ent(holder)
+        ent_same_loc = self.entities_at(holder_loc)
+
+        other_ents = [ent for ent in ent_same_loc if ent != holder]
+
+        if not other_ents:
+            return False
+
+        new_holder = random.choice(other_ents)
+        self.assign_object_holder(obj, new_holder)
+        return True
 
     def move_entity(self, entity):
         """
@@ -188,5 +197,4 @@ class State:
         If the object isn't being held, it can only be picked up by a random entity
         at the object's location
         """
-
         pass

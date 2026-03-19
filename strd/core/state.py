@@ -36,10 +36,10 @@ class State:
         If the object is being held by an entity, return None
         """
         if obj in self.object_holder:
-            holder = self.object_holder[object]
+            holder = self.object_holder[obj]
             return self.entity_loc[holder]
         else:
-            return self.object_loc[object]
+            return self.object_loc[obj]
 
     def where_is_ent(self, entity):
         """
@@ -52,8 +52,8 @@ class State:
         Returns an entity that's holding the given object
         Returns none if the object isn't being held
         """
-        if object in self.object_holder:
-            return self.object_holder[object]
+        if obj in self.object_holder:
+            return self.object_holder[obj]
         else:
             # If object is not being held, return none
             return None
@@ -197,4 +197,5 @@ class State:
         If the object isn't being held, it can only be picked up by a random entity
         at the object's location
         """
+
         pass

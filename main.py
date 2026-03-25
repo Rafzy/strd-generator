@@ -71,7 +71,7 @@ def test_actions():
 
     # --- MOVE ENTITY ---
     print("Moving Alice")
-    state.move_entity("Alice")
+    state.move_entity_rand("Alice")
     print_state(state)
 
     # --- TRY EDGE CASE ---

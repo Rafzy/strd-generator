@@ -179,7 +179,7 @@ class State:
         self.assign_object_holder(obj, new_holder)
         return True
 
-    def move_entity(self, entity):
+    def move_entity_rand(self, entity):
         """
         Randomly changes an entity to another location
         """
@@ -188,14 +188,5 @@ class State:
         new_loc = random.choice(other_locs)
         self.assign_ent_loc(entity, new_loc)
 
-    def move_object(self, obj):
-        """
-        Takes one object, if the object is held, it can randomly be
-        dropped to the location of the entity, or given to another random entity at the
-        same location
-
-        If the object isn't being held, it can only be picked up by a random entity
-        at the object's location
-        """
-
+    def move_object_rand(self, obj):
         pass

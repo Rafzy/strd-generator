@@ -9,6 +9,7 @@ class Simulation:
         pass
 
     def run_sim(self, entities, objects, locations, seed, n):
+
         state = State(
             entities=entities, objects=objects, locations=locations, seed=seed
         )

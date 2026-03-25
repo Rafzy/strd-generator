@@ -216,11 +216,11 @@ class State:
             entity_state = {}
             entity_state["name"] = ent
             entity_state["location"] = self.where_is_ent(ent)
-            entity_state["is_holding_object"] = ent in self.object_holder.values()
-            entity_state["holding_object"] = [
+            held_objects = [
                 obj for obj, entity in self.object_holder.items() if entity == ent
             ]
-
+            entity_state["holding_object"] = held_objects
+            entity_state["is_holding_object"] = len(held_objects) > 0
             snapshot["entities"].append(entity_state)
 
         return snapshot

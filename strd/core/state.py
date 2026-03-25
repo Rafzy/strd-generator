@@ -2,7 +2,11 @@ import random
 
 
 class State:
-    def __init__(self, entities, objects, locations) -> None:
+    def __init__(self, entities, objects, locations, seed=None) -> None:
+
+        # Initialize random with seed
+        self.seed = seed
+        self.rng = random.Random(seed)
         self.entities = list(entities)
         self.objects = list(objects)
         self.locations = list(locations)
@@ -10,7 +14,7 @@ class State:
         self.entity_loc = {}  # entity -> locations (Andy is in his bedroom)
 
         for e in entities:
-            location = random.choice(locations)
+            location = self.rng.choice(locations)
             self.entity_loc[e] = location
 
         self.object_holder = {}  # object -> entity (Andy is holding an apple) if object is held by someone
@@ -18,11 +22,11 @@ class State:
 
         for obj in objects:
             # Half of the time, the object will either be held by someone, or put down somewhere
-            if random.random() < 0.5:
-                holder = random.choice(entities)
+            if self.rng.random() < 0.5:
+                holder = self.rng.choice(entities)
                 self.object_holder[obj] = holder
             else:
-                location = random.choice(locations)
+                location = self.rng.choice(locations)
                 self.object_loc[obj] = location
 
             assert not (obj in self.object_holder and obj in self.object_loc), (
@@ -62,7 +66,7 @@ class State:
         """
         Returns a list of objects given a location
         """
-        objects = [object for object, loc in self.object_loc.items() if loc == location]
+        objects = [obj for obj, loc in self.object_loc.items() if loc == location]
         return objects
 
     def entities_at(self, location):
@@ -151,7 +155,7 @@ class State:
         if not ent_same_loc:
             return False
 
-        random_ent = random.choice(ent_same_loc)
+        random_ent = self.rng.choice(ent_same_loc)
 
         self.assign_object_holder(obj, random_ent)
         return True
@@ -175,7 +179,7 @@ class State:
         if not other_ents:
             return False
 
-        new_holder = random.choice(other_ents)
+        new_holder = self.rng.choice(other_ents)
         self.assign_object_holder(obj, new_holder)
         return True
 
@@ -185,8 +189,38 @@ class State:
         """
         curr_loc = self.where_is_ent(entity)
         other_locs = [location for location in self.locations if location != curr_loc]
-        new_loc = random.choice(other_locs)
+        new_loc = self.rng.choice(other_locs)
         self.assign_ent_loc(entity, new_loc)
 
     def move_object_rand(self, obj):
         pass
+
+    def to_dict(self):
+        snapshot = {
+            "objects": [],
+            "entities": [],
+            "locations": self.locations,
+        }
+
+        for obj in self.objects:
+            object_state = {}
+            object_state["name"] = obj
+            holder = self.who_has(obj)
+            object_state["is_held"] = holder is not None
+            object_state["holder"] = holder
+            object_state["location"] = self.where_is_obj(obj)
+
+            snapshot["objects"].append(object_state)
+
+        for ent in self.entities:
+            entity_state = {}
+            entity_state["name"] = ent
+            entity_state["location"] = self.where_is_ent(ent)
+            entity_state["is_holding_object"] = ent in self.object_holder.values()
+            entity_state["holding_object"] = [
+                obj for obj, entity in self.object_holder.items() if entity == ent
+            ]
+
+            snapshot["entities"].append(entity_state)
+
+        return snapshot

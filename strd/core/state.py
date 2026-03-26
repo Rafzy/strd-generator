@@ -2,7 +2,9 @@ import random
 
 
 class State:
-    def __init__(self, entities, objects, locations, seed=None) -> None:
+    def __init__(
+        self, entities: list[str], objects: list[str], locations: list[str], seed=None
+    ) -> None:
 
         # Initialize random with seed
         self.seed = seed
@@ -61,6 +63,12 @@ class State:
         else:
             # If object is not being held, return none
             return None
+
+    def is_held(self, obj) -> bool:
+        """
+        Returns True if object is being held
+        """
+        return obj in self.object_holder
 
     def objects_at(self, location):
         """
@@ -183,19 +191,34 @@ class State:
         self.assign_object_holder(obj, new_holder)
         return True
 
-    def move_entity_rand(self, entity):
+    def move_entity_rand(self):
         """
-        Randomly changes an entity to another location
+        Randomly takes one entity, and move it to a random place
+
+        Will be used in the simulation
         """
-        curr_loc = self.where_is_ent(entity)
+        rand_ent = self.rng.choice(self.entities)
+        curr_loc = self.where_is_ent(rand_ent)
         other_locs = [location for location in self.locations if location != curr_loc]
         new_loc = self.rng.choice(other_locs)
-        self.assign_ent_loc(entity, new_loc)
+        self.assign_ent_loc(rand_ent, new_loc)
 
-    def move_object_rand(self, obj):
-        pass
+    def move_object_rand(self):
+        """
+        Takes one random object, and randomly move it based on the restrictions available
 
-    def to_dict(self):
+        Will be used in the simulation
+        """
+        rand_obj = self.rng.choice(self.objects)
+        if self.is_held(rand_obj):
+            if self.rng.random() < -0.5:
+                self.pass_obj(rand_obj)
+            else:
+                self.drop_object(rand_obj)
+        else:
+            self.pick_object(rand_obj)
+
+    def take_snapshot(self):
         snapshot = {
             "objects": [],
             "entities": [],

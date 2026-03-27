@@ -9,6 +9,7 @@ class Simulation:
         self.rng = random.Random(seed)
         self.max_steps = max_steps
         self.history = {}
+        self.policy = {}
         pass
 
     def run_sim(self, entities: list[str], objects: list[str], locations: list[str]):
@@ -18,9 +19,4 @@ class Simulation:
         )
 
         for i in range(self.max_steps):
-            if self.rng.random() < 0.5:
-                state.move_object_rand()
-            else:
-                state.move_entity_rand()
-
-        pass
+            pass

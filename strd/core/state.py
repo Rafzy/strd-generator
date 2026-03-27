@@ -1,4 +1,18 @@
 import random
+from dataclasses import dataclass
+from typing import Optional, Literal
+
+type Actions = Literal["pick", "drop", "pass", "move"]
+
+
+@dataclass
+class ActionLog:
+    action: Literal["pick", "drop", "pass", "move", "none"]
+    entity: Optional[str] = None
+    obj: Optional[str] = None
+    location: Optional[str] = None
+    to_entity: Optional[str] = None
+    to_location: Optional[str] = None
 
 
 class State:
@@ -14,6 +28,9 @@ class State:
         self.locations = list(locations)
 
         self.entity_loc = {}  # entity -> locations (Andy is in his bedroom)
+        """
+        entity -> location
+        """
 
         for e in entities:
             location = self.rng.choice(locations)
@@ -128,7 +145,34 @@ class State:
         """
         self.entity_loc.pop(entity, None)
 
-    def drop_object(self, obj):
+    def valid_actions(self, obj) -> list[Actions]:
+        """
+        Returns a list of valid actions given an object
+        """
+        valids: list[Actions] = []
+        if self.is_held(obj):
+            # If held, being dropped is immediately a valid action
+            valids.append("drop")
+            holder = self.who_has(obj)
+            holder_loc = self.where_is_ent(holder)
+            other_ents = [
+                ent for ent, loc in self.entity_loc.items() if loc == holder_loc
+            ]
+            if len(other_ents) > 0:
+                valids.append("pass")
+
+        else:
+            obj_loc = self.where_is_obj(obj)
+            ent_same_loc = [
+                ent for ent, loc in self.entity_loc.items() if loc == obj_loc
+            ]
+            if len(ent_same_loc) > 0:
+                valids.append("pick")
+
+        return valids
+
+    # ACTIONS
+    def drop_object(self, obj) -> ActionLog:
         """
         Takes one object, if that object isn't being held, return 1
 
@@ -138,15 +182,15 @@ class State:
         holder = self.who_has(obj)
 
         if holder is None:
-            return False
+            return ActionLog(action="none")
 
         holder_loc = self.where_is_ent(holder)
 
         self.assign_object_loc(obj, holder_loc)
 
-        return True
+        return ActionLog(action="drop", entity=holder, obj=obj, location=holder_loc)
 
-    def pick_object(self, obj):
+    def pick_object(self, obj, ent) -> ActionLog:
         """
         Takes one object, if it's already being held, return False
 
@@ -154,21 +198,18 @@ class State:
         and assign that object to the entity and return True
         """
         if self.who_has(obj) is not None:
-            return False
+            return ActionLog(action="none")
 
         obj_loc = self.where_is_obj(obj)
+        ent_loc = self.where_is_ent(ent)
 
-        ent_same_loc = self.entities_at(obj_loc)
+        if obj_loc != ent_loc:
+            return ActionLog(action="none")
 
-        if not ent_same_loc:
-            return False
+        self.assign_object_holder(obj, ent)
+        return ActionLog(action="pick", entity=ent, obj=obj, location=obj_loc)
 
-        random_ent = self.rng.choice(ent_same_loc)
-
-        self.assign_object_holder(obj, random_ent)
-        return True
-
-    def pass_obj(self, obj):
+    def pass_obj(self, obj, ent) -> ActionLog:
         """
         Takes one object, if that object isn't being held, return False
 
@@ -177,22 +218,32 @@ class State:
         holder = self.who_has(obj)
 
         if holder is None:
-            return False
+            return ActionLog(action="none")
 
         holder_loc = self.where_is_ent(holder)
-        ent_same_loc = self.entities_at(holder_loc)
+        ent_loc = self.where_is_ent(ent)
 
-        other_ents = [ent for ent in ent_same_loc if ent != holder]
+        if holder_loc != ent_loc:
+            return ActionLog(action="none")
 
-        if not other_ents:
-            return False
+        self.assign_object_holder(obj, ent)
+        return ActionLog(
+            action="pass",
+            entity=holder,
+            obj=obj,
+            location=holder_loc,
+            to_entity=ent,
+        )
 
-        new_holder = self.rng.choice(other_ents)
-        self.assign_object_holder(obj, new_holder)
-        return True
+    def move_entity(self, ent, loc) -> ActionLog:
+        init_loc = self.where_is_ent(ent)
+        self.assign_ent_loc(ent, loc)
+        return ActionLog("move", entity=ent, location=init_loc, to_location=loc)
 
+    # DEPCRECATED
     def move_entity_rand(self):
         """
+        !!DEPCRECATED
         Randomly takes one entity, and move it to a random place
 
         Will be used in the simulation
@@ -203,20 +254,29 @@ class State:
         new_loc = self.rng.choice(other_locs)
         self.assign_ent_loc(rand_ent, new_loc)
 
+    # DEPCRECATED
     def move_object_rand(self):
         """
+        !!DEPCRECATED
         Takes one random object, and randomly move it based on the restrictions available
 
         Will be used in the simulation
         """
         rand_obj = self.rng.choice(self.objects)
-        if self.is_held(rand_obj):
-            if self.rng.random() < -0.5:
-                self.pass_obj(rand_obj)
-            else:
-                self.drop_object(rand_obj)
-        else:
-            self.pick_object(rand_obj)
+
+        # if self.is_held(rand_obj):
+        #     if self.rng.random() < 0.5:
+        #         result = self.pass_obj(rand_obj)
+        #         if not result:
+        #             self.drop_object(rand_obj)
+        #             return None
+        #         return None
+        #     else:
+        #         self.drop_object(rand_obj)
+        #         return None
+        # else:
+        #     if not self.pick_object(rand_obj):
+        #         return None
 
     def take_snapshot(self):
         snapshot = {

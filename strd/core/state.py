@@ -1,5 +1,5 @@
 import random
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 from typing import Optional, Literal
 
 type Actions = Literal["pick", "drop", "pass", "move"]
@@ -13,6 +13,7 @@ class ActionLog:
     location: Optional[str] = None
     to_entity: Optional[str] = None
     to_location: Optional[str] = None
+    error_log: Optional[str] = None
 
 
 class State:
@@ -156,7 +157,9 @@ class State:
             holder = self.who_has(obj)
             holder_loc = self.where_is_ent(holder)
             other_ents = [
-                ent for ent, loc in self.entity_loc.items() if loc == holder_loc
+                ent
+                for ent, loc in self.entity_loc.items()
+                if loc == holder_loc and ent != holder
             ]
             if len(other_ents) > 0:
                 valids.append("pass")
@@ -182,7 +185,7 @@ class State:
         holder = self.who_has(obj)
 
         if holder is None:
-            return ActionLog(action="none")
+            return ActionLog(action="none", error_log="Object isn't being held")
 
         holder_loc = self.where_is_ent(holder)
 
@@ -198,7 +201,7 @@ class State:
         and assign that object to the entity and return True
         """
         if self.who_has(obj) is not None:
-            return ActionLog(action="none")
+            return ActionLog(action="none", error_log="Object is already being held")
 
         obj_loc = self.where_is_obj(obj)
         ent_loc = self.where_is_ent(ent)
@@ -218,13 +221,19 @@ class State:
         holder = self.who_has(obj)
 
         if holder is None:
-            return ActionLog(action="none")
+            return ActionLog(action="none", error_log="Object isn't being held")
+
+        if holder == ent:
+            return ActionLog(action="none", error_log="cannot pass to the same entity")
 
         holder_loc = self.where_is_ent(holder)
         ent_loc = self.where_is_ent(ent)
 
         if holder_loc != ent_loc:
-            return ActionLog(action="none")
+            return ActionLog(
+                action="none",
+                error_log="Target entity isn't in the same place as current holder",
+            )
 
         self.assign_object_holder(obj, ent)
         return ActionLog(

@@ -1,3 +1,4 @@
+from strd.core.simulation import Simulation
 from strd.core.state import State
 
 
@@ -82,8 +83,10 @@ def test_actions():
 
 
 def main():
+    sim = Simulation(10)
     pass
 
 
 if __name__ == "__main__":
-    test_actions()
+    main()
+    # test_actions()

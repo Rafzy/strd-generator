@@ -1,6 +1,6 @@
 import random
-from state import State
-from dataclasses import dataclass
+from state import State, Actions, ActionLog
+from dataclasses import asdict, dataclass
 
 
 class Simulation:
@@ -18,5 +18,53 @@ class Simulation:
             entities=entities, objects=objects, locations=locations, seed=self.seed
         )
 
-        for i in range(self.max_steps):
-            pass
+        action_logs: list[ActionLog] = []
+
+        i = 0
+
+        while True:
+            if i > self.max_steps:
+                break
+
+            random_obj = self.rng.choice(state.objects)
+            valid_actions: list[Actions] = state.valid_actions(random_obj)
+
+            if not valid_actions:
+                print(f"No valid action for: {random_obj}")
+                continue
+
+            rand_action: Actions = self.rng.choice(valid_actions)
+
+            result: ActionLog = ActionLog(action="none", error_log="not executed yet")
+
+            if rand_action == "pass":
+                holder = state.who_has(random_obj)
+                other_entities = [
+                    ent
+                    for ent, obj in state.object_holder.items()
+                    if ent != holder and obj == random_obj
+                ]
+                to_entity = self.rng.choice(other_entities)
+                result = state.pass_obj(random_obj, to_entity)
+
+            elif rand_action == "drop":
+                result = state.drop_object(random_obj)
+
+            elif rand_action == "pick":
+                obj_location = state.where_is_obj(random_obj)
+                ent_same_loc = [
+                    ent for ent, loc in state.entity_loc.items() if loc == obj_location
+                ]
+                picker = self.rng.choice(ent_same_loc)
+                result = state.pick_object(random_obj, picker)
+
+            if result.action == "none":
+                print(result.error_log)
+                break
+            else:
+                action_logs.append(result)
+
+            i += 1
+
+        for actions in action_logs:
+            print(asdict(ActionLog))

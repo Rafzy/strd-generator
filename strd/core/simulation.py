@@ -20,11 +20,12 @@ class Simulation:
         )
 
         action_logs: list[ActionLog] = []
+        state_timeline = []
 
         i = 0
 
         while True:
-            if i > self.max_steps:
+            if i >= self.max_steps:
                 break
 
             random_obj = self.rng.choice(state.objects)
@@ -73,9 +74,19 @@ class Simulation:
                 print(result.error_log)
                 break
             else:
+                result.order = i + 1
                 action_logs.append(result)
+
+            curr_timeline = {}
+            curr_timeline["order"] = i + 1
+            curr_timeline["snapshot"] = state.take_snapshot()
+
+            state_timeline.append(curr_timeline)
 
             i += 1
 
         for actions in action_logs:
             pprint.pprint(asdict(actions))
+
+        for timeline in state_timeline:
+            pprint.pprint(timeline)

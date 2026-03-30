@@ -8,6 +8,7 @@ type Actions = Literal["pick", "drop", "pass", "move"]
 @dataclass
 class ActionLog:
     action: Literal["pick", "drop", "pass", "move", "none"]
+    order: Optional[int] = None
     entity: Optional[str] = None
     obj: Optional[str] = None
     location: Optional[str] = None

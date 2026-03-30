@@ -5,9 +5,10 @@ import pprint
 
 
 class Simulation:
-    def __init__(self, max_steps, seed=None) -> None:
+    def __init__(self, max_steps, seed=None, state: State = State([], [], [])) -> None:
         self.seed = seed
         self.rng = random.Random(seed)
+        self.state: State = state
         self.max_steps = max_steps
         self.history = {}
         self.policy = {}
@@ -67,7 +68,9 @@ class Simulation:
 
             elif rand_action == "move":
                 rand_entity = self.rng.choice(state.entities)
-                rand_location = self.rng.choice(state.locations)
+                ent_loc = state.where_is_ent(rand_entity)
+                other_locations = [loc for loc in state.locations if loc != ent_loc]
+                rand_location = self.rng.choice(other_locations)
                 result = state.move_entity(rand_entity, rand_location)
 
             if result.action == "none":
@@ -85,8 +88,20 @@ class Simulation:
 
             i += 1
 
-        for actions in action_logs:
-            pprint.pprint(asdict(actions))
+        # for actions in action_logs:
+        #     pprint.pprint(asdict(actions))
+        #
+        # for timeline in state_timeline:
+        #     pprint.pprint(timeline)
+        return action_logs, state_timeline
 
-        for timeline in state_timeline:
-            pprint.pprint(timeline)
+    def format_action(self, log: ActionLog):
+        if log.action == "pick":
+            return f"{log.entity} picked up {log.obj} at {log.location}"
+        elif log.action == "drop":
+            return f"{log.entity} dropped {log.obj} at {log.location}"
+        elif log.action == "pass":
+            return f"{log.entity} passed {log.obj} to {log.to_entity} at {log.location}"
+        elif log.action == "move":
+            return f"{log.entity} moved from {log.location} to {log.to_location}"
+        return f"ERROR: {log.error_log}"

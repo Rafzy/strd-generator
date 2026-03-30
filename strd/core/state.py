@@ -248,6 +248,10 @@ class State:
 
     def move_entity(self, ent, loc) -> ActionLog:
         init_loc = self.where_is_ent(ent)
+        if init_loc == loc:
+            return ActionLog(
+                action="none", error_log="Entity must move to a different location"
+            )
         self.assign_ent_loc(ent, loc)
         return ActionLog("move", entity=ent, location=init_loc, to_location=loc)
 
@@ -273,8 +277,9 @@ class State:
 
         Will be used in the simulation
         """
-        rand_obj = self.rng.choice(self.objects)
-
+        pass
+        # rand_obj = self.rng.choice(self.objects)
+        #
         # if self.is_held(rand_obj):
         #     if self.rng.random() < 0.5:
         #         result = self.pass_obj(rand_obj)

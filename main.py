@@ -1,95 +1,79 @@
 from strd.core.simulation import Simulation
-from strd.core.state import State
+from dataclasses import asdict
 
 
-def print_state(state):
-    print("\n=== CURRENT STATE ===")
-    print("Entities:", state.entities)
-    print("Locations:", state.locations)
-    print("Objects:", state.objects)
-
-    print("\nEntity Locations:")
-    for ent, loc in state.entity_loc.items():
-        print(f"  {ent} -> {loc}")
-
-    print("\nObject Holders:")
-    for obj, holder in state.object_holder.items():
-        print(f"  {obj} held by {holder}")
-
-    print("\nObject Locations:")
-    for obj, loc in state.object_loc.items():
-        print(f"  {obj} at {loc}")
-    print("====================\n")
+# -------- FORMATTERS -------- #
 
 
-def setup_state():
+def format_action(log):
+    if log.action == "pick":
+        return f"{log.entity} picked up {log.obj} at {log.location}"
+    elif log.action == "drop":
+        return f"{log.entity} dropped {log.obj} at {log.location}"
+    elif log.action == "pass":
+        return f"{log.entity} passed {log.obj} to {log.to_entity} at {log.location}"
+    elif log.action == "move":
+        return f"{log.entity} moved from {log.location} to {log.to_location}"
+    return f"ERROR: {log.error_log}"
+
+
+def format_snapshot(snapshot):
+    output = []
+
+    for loc in snapshot["locations"]:
+        ents = [e["name"] for e in snapshot["entities"] if e["location"] == loc]
+
+        objs = []
+        for o in snapshot["objects"]:
+            if o["location"] == loc:
+                if o["is_held"]:
+                    objs.append(f"{o['name']} (held by {o['holder']})")
+                else:
+                    objs.append(o["name"])
+
+        output.append(f"{loc}:")
+        output.append(f"  Entities: {', '.join(ents) if ents else '-'}")
+        output.append(f"  Objects: {', '.join(objs) if objs else '-'}")
+        output.append("")
+
+    return "\n".join(output)
+
+
+def print_simulation(action_logs, timeline):
+    print("\n=== SIMULATION TRACE ===\n")
+
+    for log, step in zip(action_logs, timeline):
+        print(f"========== STEP {log.order} ==========")
+
+        # Action
+        print("Action:")
+        print(f"  {format_action(log)}\n")
+
+        # State
+        print("State after action:")
+        print(format_snapshot(step["snapshot"]))
+
+        print("=" * 35 + "\n")
+
+
+# -------- TEST -------- #
+
+
+def run_test():
     entities = ["Alice", "Bob", "Charlie"]
-    objects = ["apple", "book"]
-    locations = ["kitchen", "bedroom"]
+    objects = ["Apple", "Book"]
+    locations = ["Kitchen", "Bedroom", "Office"]
 
-    state = State(entities, objects, locations)
+    sim = Simulation(max_steps=10, seed=123)
 
-    # Clear random initialization
-    state.entity_loc.clear()
-    state.object_holder.clear()
-    state.object_loc.clear()
+    action_logs, timeline = sim.run_sim(
+        entities=entities,
+        objects=objects,
+        locations=locations,
+    )
 
-    # Manually assign locations
-    state.assign_ent_loc("Alice", "kitchen")
-    state.assign_ent_loc("Bob", "kitchen")
-    state.assign_ent_loc("Charlie", "bedroom")
-
-    # Assign objects
-    state.assign_object_loc("apple", "kitchen")  # on the ground
-    state.assign_object_holder("book", "Charlie")  # already held
-
-    return state
-
-
-def test_actions():
-    state = setup_state()
-
-    print("Initial State:")
-    print_state(state)
-
-    # --- PICK OBJECT ---
-    print("Alice/Bob tries to pick up apple")
-    result = state.pick_object("apple")
-    print("pick_object result:", result)
-    print_state(state)
-
-    # --- PASS OBJECT ---
-    print("Passing apple to another entity in same location")
-    result = state.pass_obj("apple")
-    print("pass_obj result:", result)
-    print_state(state)
-
-    # --- DROP OBJECT ---
-    print("Dropping apple")
-    result = state.drop_object("apple")
-    print("drop_object result:", result)
-    print_state(state)
-
-    # --- MOVE ENTITY ---
-    print("Moving Alice")
-    state.move_entity_rand("Alice")
-    print_state(state)
-
-    # --- TRY EDGE CASE ---
-    print("Trying to pass object not held (apple)")
-    result = state.pass_obj("apple")
-    print("pass_obj result:", result)
-    print_state(state)
-
-
-def main():
-    entities = ["Alice", "Bob", "Charlie"]
-    objects = ["apple", "book"]
-    locations = ["kitchen", "bedroom"]
-    sim = Simulation(10)
-    sim.run_sim(entities=entities, objects=objects, locations=locations)
+    print_simulation(action_logs, timeline)
 
 
 if __name__ == "__main__":
-    main()
-    # test_actions()
+    run_test()

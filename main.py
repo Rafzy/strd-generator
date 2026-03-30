@@ -83,8 +83,11 @@ def test_actions():
 
 
 def main():
+    entities = ["Alice", "Bob", "Charlie"]
+    objects = ["apple", "book"]
+    locations = ["kitchen", "bedroom"]
     sim = Simulation(10)
-    pass
+    sim.run_sim(entities=entities, objects=objects, locations=locations)
 
 
 if __name__ == "__main__":

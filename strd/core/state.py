@@ -150,7 +150,8 @@ class State:
         """
         Returns a list of valid actions given an object
         """
-        valids: list[Actions] = []
+        # Move is always added as a valid action (Entities can move anywhere anytime)
+        valids: list[Actions] = ["move"]
         if self.is_held(obj):
             # If held, being dropped is immediately a valid action
             valids.append("drop")

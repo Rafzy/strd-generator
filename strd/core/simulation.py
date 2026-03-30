@@ -1,6 +1,7 @@
 import random
-from state import State, Actions, ActionLog
+from .state import State, Actions, ActionLog
 from dataclasses import asdict, dataclass
+import pprint
 
 
 class Simulation:
@@ -37,13 +38,18 @@ class Simulation:
 
             result: ActionLog = ActionLog(action="none", error_log="not executed yet")
 
+            # print(valid_actions)
+            # pprint.pprint(state.take_snapshot())
+
             if rand_action == "pass":
                 holder = state.who_has(random_obj)
+                holder_loc = state.where_is_ent(holder)
                 other_entities = [
                     ent
-                    for ent, obj in state.object_holder.items()
-                    if ent != holder and obj == random_obj
+                    for ent, loc in state.entity_loc.items()
+                    if ent != holder and loc == holder_loc
                 ]
+
                 to_entity = self.rng.choice(other_entities)
                 result = state.pass_obj(random_obj, to_entity)
 
@@ -58,6 +64,11 @@ class Simulation:
                 picker = self.rng.choice(ent_same_loc)
                 result = state.pick_object(random_obj, picker)
 
+            elif rand_action == "move":
+                rand_entity = self.rng.choice(state.entities)
+                rand_location = self.rng.choice(state.locations)
+                result = state.move_entity(rand_entity, rand_location)
+
             if result.action == "none":
                 print(result.error_log)
                 break
@@ -67,4 +78,4 @@ class Simulation:
             i += 1
 
         for actions in action_logs:
-            print(asdict(ActionLog))
+            pprint.pprint(asdict(actions))

@@ -1,11 +1,18 @@
 from strd.core.simulation import Simulation
 from dataclasses import asdict
+from strd.core.state import ActionLog
+import json
+
+
+def save_episode_json(path: str, episode: dict):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(episode, f, indent=2, ensure_ascii=False)
 
 
 # -------- FORMATTERS -------- #
 
 
-def format_action(log):
+def format_action(log: ActionLog):
     if log.action == "pick":
         return f"{log.entity} picked up {log.obj} at {log.location}"
     elif log.action == "drop":
@@ -65,14 +72,13 @@ def run_test():
     locations = ["Kitchen", "Bedroom", "Office"]
 
     sim = Simulation(max_steps=10, seed=123)
-
-    action_logs, timeline = sim.run_sim(
+    episode = sim.export_episode(
+        episode_id="ep_0001",
         entities=entities,
         objects=objects,
         locations=locations,
     )
-
-    print_simulation(action_logs, timeline)
+    save_episode_json("episodes/ep_0001.json", episode)
 
 
 if __name__ == "__main__":

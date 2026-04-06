@@ -17,6 +17,16 @@ class ActionLog:
     error_log: Optional[str] = None
 
 
+@dataclass
+class ActionSpec:
+    action: Literal["pick", "drop", "pass", "move"]
+    entity: Optional[str] = None
+    obj: Optional[str] = None
+    location: Optional[str] = None
+    to_entity: Optional[str] = None
+    to_location: Optional[str] = None
+
+
 class State:
     def __init__(
         self, entities: list[str], objects: list[str], locations: list[str], seed=None
@@ -34,12 +44,19 @@ class State:
         entity -> location
         """
 
+        self.object_holder = {}  # object -> entity (Andy is holding an apple) if object is held by someone
+        """
+        object -> holder
+        """
+
+        self.object_loc = {}  # object -> location (The apple is under a table) if object isn't held by someone
+        """
+        object -> location
+        """
+
         for e in entities:
             location = self.rng.choice(locations)
             self.entity_loc[e] = location
-
-        self.object_holder = {}  # object -> entity (Andy is holding an apple) if object is held by someone
-        self.object_loc = {}  # object -> location (The apple is under a table) if object isn't held by someone
 
         for obj in objects:
             # Half of the time, the object will either be held by someone, or put down somewhere
@@ -54,11 +71,16 @@ class State:
                 f"Inconsistent state for {obj}"
             )
 
+        # Ensure no duplicated items
+        assert len(set(self.entities)) == len(self.entities), "Duplicate entities"
+        assert len(set(self.objects)) == len(self.objects), "Duplicate objects"
+        assert len(set(self.locations)) == len(self.locations), "Duplicate locations"
+
     # Incase we need to know who has what and where is what
     def where_is_obj(self, obj):
         """
         Returns the location of an object
-        If the object is being held by an entity, return None
+        If the object is being held by an entity, return the entity's location
         """
         if obj in self.object_holder:
             holder = self.object_holder[obj]
@@ -176,6 +198,57 @@ class State:
 
         return valids
 
+    def enumerate_valid_actions(self) -> list[ActionSpec]:
+        actions = []
+
+        # move
+        for entity in self.entities:
+            curr_loc = self.where_is_ent(entity)
+            for loc in self.locations:
+                if loc != curr_loc:
+                    actions.append(
+                        ActionSpec(
+                            action="move",
+                            entity=entity,
+                            location=curr_loc,
+                            to_location=loc,
+                        )
+                    )
+
+        # pick
+        for obj, obj_loc in self.object_loc.items():
+            for ent, ent_loc in self.entity_loc.items():
+                if obj_loc == ent_loc:
+                    actions.append(
+                        ActionSpec(action="pick", entity=ent, obj=obj, location=obj_loc)
+                    )
+
+        # drop
+        for obj, obj_holder in self.object_holder.items():
+            holder_loc = self.where_is_ent(obj_holder)
+            actions.append(
+                ActionSpec(
+                    action="drop", entity=obj_holder, obj=obj, location=holder_loc
+                )
+            )
+
+        # pass
+        for obj, obj_holder in self.object_holder.items():
+            holder_loc = self.where_is_ent(obj_holder)
+            for ent, ent_loc in self.entity_loc.items():
+                if ent != obj_holder and ent_loc == holder_loc:
+                    actions.append(
+                        ActionSpec(
+                            action="pass",
+                            entity=obj_holder,
+                            obj=obj,
+                            location=holder_loc,
+                            to_entity=ent,
+                        )
+                    )
+
+        return actions
+
     # ACTIONS
     def drop_object(self, obj) -> ActionLog:
         """
@@ -209,7 +282,10 @@ class State:
         ent_loc = self.where_is_ent(ent)
 
         if obj_loc != ent_loc:
-            return ActionLog(action="none")
+            return ActionLog(
+                action="none",
+                error_log="Entity and object are not at the same location",
+            )
 
         self.assign_object_holder(obj, ent)
         return ActionLog(action="pick", entity=ent, obj=obj, location=obj_loc)
@@ -255,71 +331,78 @@ class State:
         self.assign_ent_loc(ent, loc)
         return ActionLog("move", entity=ent, location=init_loc, to_location=loc)
 
-    # DEPCRECATED
-    def move_entity_rand(self):
+    def execute(self, spec: ActionSpec) -> ActionLog:
         """
-        !!DEPCRECATED
-        Randomly takes one entity, and move it to a random place
+        Given an actionspec, execute the action
+        """
+        if spec.action == "move":
+            return self.move_entity(ent=spec.entity, loc=spec.to_location)
+        elif spec.action == "pick":
+            return self.pick_object(obj=spec.obj, ent=spec.entity)
+        elif spec.action == "drop":
+            return self.drop_object(obj=spec.obj)
+        elif spec.action == "pass":
+            return self.pass_obj(obj=spec.obj, ent=spec.to_entity)
+        return ActionLog(action="none", error_log="Unknown Action")
 
-        Will be used in the simulation
+    def validate(self) -> None:
         """
-        rand_ent = self.rng.choice(self.entities)
-        curr_loc = self.where_is_ent(rand_ent)
-        other_locs = [location for location in self.locations if location != curr_loc]
-        new_loc = self.rng.choice(other_locs)
-        self.assign_ent_loc(rand_ent, new_loc)
+        Check every state's validity
+        """
+        # every entity must have exactly one location
+        assert set(self.entity_loc.keys()) == set(self.entities)
 
-    # DEPCRECATED
-    def move_object_rand(self):
-        """
-        !!DEPCRECATED
-        Takes one random object, and randomly move it based on the restrictions available
+        # every object must be either held or at a location, not both, not neither
+        for obj in self.objects:
+            in_holder = obj in self.object_holder
+            in_loc = obj in self.object_loc
+            assert in_holder != in_loc, f"{obj} must be either held or placed"
 
-        Will be used in the simulation
-        """
-        pass
-        # rand_obj = self.rng.choice(self.objects)
-        #
-        # if self.is_held(rand_obj):
-        #     if self.rng.random() < 0.5:
-        #         result = self.pass_obj(rand_obj)
-        #         if not result:
-        #             self.drop_object(rand_obj)
-        #             return None
-        #         return None
-        #     else:
-        #         self.drop_object(rand_obj)
-        #         return None
-        # else:
-        #     if not self.pick_object(rand_obj):
-        #         return None
+        # holders must be valid entities
+        for obj, holder in self.object_holder.items():
+            assert holder in self.entities, f"Invalid holder {holder} for {obj}"
+
+        # object locations must be valid locations
+        for obj, loc in self.object_loc.items():
+            assert loc in self.locations, f"Invalid location {loc} for {obj}"
+
+        # entity locations must be valid
+        for ent, loc in self.entity_loc.items():
+            assert loc in self.locations, f"Invalid location {loc} for {ent}"
 
     def take_snapshot(self):
         snapshot = {
             "objects": [],
             "entities": [],
-            "locations": self.locations,
+            "relations": {
+                "entity_location": dict(self.entity_loc),
+                "object_location": dict(self.object_loc),
+                "object_holder": dict(self.object_holder),
+            },
         }
 
         for obj in self.objects:
-            object_state = {}
-            object_state["name"] = obj
             holder = self.who_has(obj)
-            object_state["is_held"] = holder is not None
-            object_state["holder"] = holder
-            object_state["location"] = self.where_is_obj(obj)
-
-            snapshot["objects"].append(object_state)
+            snapshot["objects"].append(
+                {
+                    "name": obj,
+                    "is_held": holder is not None,
+                    "holder": holder,
+                    "location": self.where_is_obj(obj),
+                }
+            )
 
         for ent in self.entities:
-            entity_state = {}
-            entity_state["name"] = ent
-            entity_state["location"] = self.where_is_ent(ent)
             held_objects = [
                 obj for obj, entity in self.object_holder.items() if entity == ent
             ]
-            entity_state["holding_object"] = held_objects
-            entity_state["is_holding_object"] = len(held_objects) > 0
-            snapshot["entities"].append(entity_state)
+            snapshot["entities"].append(
+                {
+                    "name": ent,
+                    "location": self.where_is_ent(ent),
+                    "holding_objects": held_objects,
+                    "is_holding_object": len(held_objects) > 0,
+                }
+            )
 
         return snapshot

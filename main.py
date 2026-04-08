@@ -1,33 +1,35 @@
+from strd.core.state import Actions
 from strd.core.simulation import Simulation
-from dataclasses import asdict
-from strd.core.state import ActionLog
 import json
 
 
-def save_episode_json(path: str, episode: dict):
+def save_episode_json(path: str, episode: dict) -> None:
     with open(path, "w", encoding="utf-8") as f:
         json.dump(episode, f, indent=2, ensure_ascii=False)
 
 
-# -------- FORMATTERS -------- #
+def format_action(log: dict) -> str:
+    action = log["action"]
+
+    if action == "pick":
+        return f"{log['entity']} picked up {log['obj']} at {log['location']}"
+    elif action == "drop":
+        return f"{log['entity']} dropped {log['obj']} at {log['location']}"
+    elif action == "pass":
+        return (
+            f"{log['entity']} passed {log['obj']} "
+            f"to {log['to_entity']} at {log['location']}"
+        )
+    elif action == "move":
+        return f"{log['entity']} moved from {log['location']} to {log['to_location']}"
+
+    return f"ERROR: {log.get('error_log', 'Unknown error')}"
 
 
-def format_action(log: ActionLog):
-    if log.action == "pick":
-        return f"{log.entity} picked up {log.obj} at {log.location}"
-    elif log.action == "drop":
-        return f"{log.entity} dropped {log.obj} at {log.location}"
-    elif log.action == "pass":
-        return f"{log.entity} passed {log.obj} to {log.to_entity} at {log.location}"
-    elif log.action == "move":
-        return f"{log.entity} moved from {log.location} to {log.to_location}"
-    return f"ERROR: {log.error_log}"
-
-
-def format_snapshot(snapshot):
+def format_snapshot(snapshot: dict, locations: list[str]) -> str:
     output = []
 
-    for loc in snapshot["locations"]:
+    for loc in locations:
         ents = [e["name"] for e in snapshot["entities"] if e["location"] == loc]
 
         objs = []
@@ -46,40 +48,50 @@ def format_snapshot(snapshot):
     return "\n".join(output)
 
 
-def print_simulation(action_logs, timeline):
+def print_simulation(episode: dict) -> None:
     print("\n=== SIMULATION TRACE ===\n")
 
-    for log, step in zip(action_logs, timeline):
-        print(f"========== STEP {log.order} ==========")
+    locations = episode["world"]["locations"]
 
-        # Action
+    print("========== INITIAL STATE ==========")
+    print(format_snapshot(episode["initial_state"], locations))
+    print("=" * 35 + "\n")
+
+    for log, step in zip(episode["actions"], episode["timeline"]):
+        print(f"========== STEP {log['order']} ==========")
+
         print("Action:")
         print(f"  {format_action(log)}\n")
 
-        # State
         print("State after action:")
-        print(format_snapshot(step["snapshot"]))
+        print(format_snapshot(step["snapshot"], locations))
 
         print("=" * 35 + "\n")
 
 
-# -------- TEST -------- #
-
-
-def run_test():
+def run_test(episode_id: str):
     entities = ["Alice", "Bob", "Charlie"]
     objects = ["Apple", "Book"]
     locations = ["Kitchen", "Bedroom", "Office"]
 
-    sim = Simulation(max_steps=10, seed=123)
+    sim = Simulation(max_steps=10, seed=1234)
+    action_weights: dict[Actions, float] = {
+        "move": 0.20,
+        "pick": 0.30,
+        "pass": 0.30,
+        "drop": 0.20,
+    }
     episode = sim.export_episode(
-        episode_id="ep_0001",
+        episode_id=episode_id,
         entities=entities,
         objects=objects,
         locations=locations,
+        action_type_weights=action_weights,
     )
-    save_episode_json("episodes/ep_0001.json", episode)
+
+    print_simulation(episode)
+    save_episode_json(f"episodes/{episode_id}.json", episode)
 
 
 if __name__ == "__main__":
-    run_test()
+    run_test(episode_id="ep_0002")

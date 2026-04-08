@@ -1,6 +1,6 @@
 {
-  "episode_id": "ep_0001",
-  "seed": 123,
+  "episode_id": "ep_0002",
+  "seed": 1234,
   "config": {
     "max_steps": 10
   },
@@ -24,77 +24,67 @@
     "objects": [
       {
         "name": "Apple",
-        "is_held": false,
-        "holder": null,
-        "location": "Bedroom"
+        "is_held": true,
+        "holder": "Charlie",
+        "location": "Kitchen"
       },
       {
         "name": "Book",
         "is_held": true,
-        "holder": "Alice",
+        "holder": "Charlie",
         "location": "Kitchen"
       }
     ],
     "entities": [
       {
         "name": "Alice",
-        "location": "Kitchen",
-        "holding_objects": [
-          "Book"
-        ],
-        "is_holding_object": true
+        "location": "Bedroom",
+        "holding_objects": [],
+        "is_holding_object": false
       },
       {
         "name": "Bob",
-        "location": "Bedroom",
+        "location": "Kitchen",
         "holding_objects": [],
         "is_holding_object": false
       },
       {
         "name": "Charlie",
         "location": "Kitchen",
-        "holding_objects": [],
-        "is_holding_object": false
+        "holding_objects": [
+          "Apple",
+          "Book"
+        ],
+        "is_holding_object": true
       }
     ],
     "relations": {
       "entity_location": {
-        "Alice": "Kitchen",
-        "Bob": "Bedroom",
+        "Alice": "Bedroom",
+        "Bob": "Kitchen",
         "Charlie": "Kitchen"
       },
-      "object_location": {
-        "Apple": "Bedroom"
-      },
+      "object_location": {},
       "object_holder": {
-        "Book": "Alice"
+        "Apple": "Charlie",
+        "Book": "Charlie"
       }
     }
   },
   "actions": [
     {
-      "action": "move",
-      "order": 1,
-      "entity": "Alice",
-      "obj": null,
-      "location": "Kitchen",
-      "to_entity": null,
-      "to_location": "Bedroom",
-      "error_log": null
-    },
-    {
       "action": "pass",
-      "order": 2,
-      "entity": "Alice",
+      "order": 1,
+      "entity": "Charlie",
       "obj": "Book",
-      "location": "Bedroom",
+      "location": "Kitchen",
       "to_entity": "Bob",
       "to_location": null,
       "error_log": null
     },
     {
       "action": "move",
-      "order": 3,
+      "order": 2,
       "entity": "Alice",
       "obj": null,
       "location": "Bedroom",
@@ -103,19 +93,29 @@
       "error_log": null
     },
     {
-      "action": "pick",
-      "order": 4,
-      "entity": "Bob",
+      "action": "pass",
+      "order": 3,
+      "entity": "Charlie",
       "obj": "Apple",
-      "location": "Bedroom",
-      "to_entity": null,
+      "location": "Kitchen",
+      "to_entity": "Alice",
+      "to_location": null,
+      "error_log": null
+    },
+    {
+      "action": "pass",
+      "order": 4,
+      "entity": "Alice",
+      "obj": "Apple",
+      "location": "Kitchen",
+      "to_entity": "Bob",
       "to_location": null,
       "error_log": null
     },
     {
       "action": "move",
       "order": 5,
-      "entity": "Alice",
+      "entity": "Bob",
       "obj": null,
       "location": "Kitchen",
       "to_entity": null,
@@ -125,39 +125,39 @@
     {
       "action": "move",
       "order": 6,
-      "entity": "Bob",
+      "entity": "Alice",
       "obj": null,
-      "location": "Bedroom",
+      "location": "Kitchen",
       "to_entity": null,
-      "to_location": "Kitchen",
+      "to_location": "Bedroom",
+      "error_log": null
+    },
+    {
+      "action": "pass",
+      "order": 7,
+      "entity": "Bob",
+      "obj": "Apple",
+      "location": "Bedroom",
+      "to_entity": "Alice",
+      "to_location": null,
       "error_log": null
     },
     {
       "action": "drop",
-      "order": 7,
+      "order": 8,
       "entity": "Bob",
       "obj": "Book",
-      "location": "Kitchen",
+      "location": "Bedroom",
       "to_entity": null,
       "to_location": null,
       "error_log": null
     },
     {
-      "action": "move",
-      "order": 8,
-      "entity": "Bob",
-      "obj": null,
-      "location": "Kitchen",
-      "to_entity": null,
-      "to_location": "Office",
-      "error_log": null
-    },
-    {
       "action": "drop",
       "order": 9,
-      "entity": "Bob",
+      "entity": "Alice",
       "obj": "Apple",
-      "location": "Office",
+      "location": "Bedroom",
       "to_entity": null,
       "to_location": null,
       "error_log": null
@@ -165,11 +165,11 @@
     {
       "action": "move",
       "order": 10,
-      "entity": "Bob",
+      "entity": "Charlie",
       "obj": null,
-      "location": "Office",
+      "location": "Kitchen",
       "to_entity": null,
-      "to_location": "Kitchen",
+      "to_location": "Office",
       "error_log": null
     }
   ],
@@ -180,50 +180,51 @@
         "objects": [
           {
             "name": "Apple",
-            "is_held": false,
-            "holder": null,
-            "location": "Bedroom"
+            "is_held": true,
+            "holder": "Charlie",
+            "location": "Kitchen"
           },
           {
             "name": "Book",
             "is_held": true,
-            "holder": "Alice",
-            "location": "Bedroom"
+            "holder": "Bob",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
             "name": "Alice",
             "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "Kitchen",
             "holding_objects": [
               "Book"
             ],
             "is_holding_object": true
           },
           {
-            "name": "Bob",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
             "name": "Charlie",
             "location": "Kitchen",
-            "holding_objects": [],
-            "is_holding_object": false
+            "holding_objects": [
+              "Apple"
+            ],
+            "is_holding_object": true
           }
         ],
         "relations": {
           "entity_location": {
             "Alice": "Bedroom",
-            "Bob": "Bedroom",
+            "Bob": "Kitchen",
             "Charlie": "Kitchen"
           },
-          "object_location": {
-            "Apple": "Bedroom"
-          },
+          "object_location": {},
           "object_holder": {
-            "Book": "Alice"
+            "Apple": "Charlie",
+            "Book": "Bob"
           }
         }
       }
@@ -234,27 +235,27 @@
         "objects": [
           {
             "name": "Apple",
-            "is_held": false,
-            "holder": null,
-            "location": "Bedroom"
+            "is_held": true,
+            "holder": "Charlie",
+            "location": "Kitchen"
           },
           {
             "name": "Book",
             "is_held": true,
             "holder": "Bob",
-            "location": "Bedroom"
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
             "name": "Alice",
-            "location": "Bedroom",
+            "location": "Kitchen",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Bob",
-            "location": "Bedroom",
+            "location": "Kitchen",
             "holding_objects": [
               "Book"
             ],
@@ -263,20 +264,21 @@
           {
             "name": "Charlie",
             "location": "Kitchen",
-            "holding_objects": [],
-            "is_holding_object": false
+            "holding_objects": [
+              "Apple"
+            ],
+            "is_holding_object": true
           }
         ],
         "relations": {
           "entity_location": {
-            "Alice": "Bedroom",
-            "Bob": "Bedroom",
+            "Alice": "Kitchen",
+            "Bob": "Kitchen",
             "Charlie": "Kitchen"
           },
-          "object_location": {
-            "Apple": "Bedroom"
-          },
+          "object_location": {},
           "object_holder": {
+            "Apple": "Charlie",
             "Book": "Bob"
           }
         }
@@ -288,27 +290,29 @@
         "objects": [
           {
             "name": "Apple",
-            "is_held": false,
-            "holder": null,
-            "location": "Bedroom"
+            "is_held": true,
+            "holder": "Alice",
+            "location": "Kitchen"
           },
           {
             "name": "Book",
             "is_held": true,
             "holder": "Bob",
-            "location": "Bedroom"
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
             "name": "Alice",
             "location": "Kitchen",
-            "holding_objects": [],
-            "is_holding_object": false
+            "holding_objects": [
+              "Apple"
+            ],
+            "is_holding_object": true
           },
           {
             "name": "Bob",
-            "location": "Bedroom",
+            "location": "Kitchen",
             "holding_objects": [
               "Book"
             ],
@@ -324,13 +328,12 @@
         "relations": {
           "entity_location": {
             "Alice": "Kitchen",
-            "Bob": "Bedroom",
+            "Bob": "Kitchen",
             "Charlie": "Kitchen"
           },
-          "object_location": {
-            "Apple": "Bedroom"
-          },
+          "object_location": {},
           "object_holder": {
+            "Apple": "Alice",
             "Book": "Bob"
           }
         }
@@ -344,13 +347,13 @@
             "name": "Apple",
             "is_held": true,
             "holder": "Bob",
-            "location": "Bedroom"
+            "location": "Kitchen"
           },
           {
             "name": "Book",
             "is_held": true,
             "holder": "Bob",
-            "location": "Bedroom"
+            "location": "Kitchen"
           }
         ],
         "entities": [
@@ -362,10 +365,10 @@
           },
           {
             "name": "Bob",
-            "location": "Bedroom",
+            "location": "Kitchen",
             "holding_objects": [
-              "Book",
-              "Apple"
+              "Apple",
+              "Book"
             ],
             "is_holding_object": true
           },
@@ -379,13 +382,13 @@
         "relations": {
           "entity_location": {
             "Alice": "Kitchen",
-            "Bob": "Bedroom",
+            "Bob": "Kitchen",
             "Charlie": "Kitchen"
           },
           "object_location": {},
           "object_holder": {
-            "Book": "Bob",
-            "Apple": "Bob"
+            "Apple": "Bob",
+            "Book": "Bob"
           }
         }
       }
@@ -410,6 +413,60 @@
         "entities": [
           {
             "name": "Alice",
+            "location": "Kitchen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "Bedroom",
+            "holding_objects": [
+              "Apple",
+              "Book"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Alice": "Kitchen",
+            "Bob": "Bedroom",
+            "Charlie": "Kitchen"
+          },
+          "object_location": {},
+          "object_holder": {
+            "Apple": "Bob",
+            "Book": "Bob"
+          }
+        }
+      }
+    },
+    {
+      "order": 6,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Apple",
+            "is_held": true,
+            "holder": "Bob",
+            "location": "Bedroom"
+          },
+          {
+            "name": "Book",
+            "is_held": true,
+            "holder": "Bob",
+            "location": "Bedroom"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Alice",
             "location": "Bedroom",
             "holding_objects": [],
             "is_holding_object": false
@@ -418,8 +475,8 @@
             "name": "Bob",
             "location": "Bedroom",
             "holding_objects": [
-              "Book",
-              "Apple"
+              "Apple",
+              "Book"
             ],
             "is_holding_object": true
           },
@@ -438,62 +495,8 @@
           },
           "object_location": {},
           "object_holder": {
-            "Book": "Bob",
-            "Apple": "Bob"
-          }
-        }
-      }
-    },
-    {
-      "order": 6,
-      "snapshot": {
-        "objects": [
-          {
-            "name": "Apple",
-            "is_held": true,
-            "holder": "Bob",
-            "location": "Kitchen"
-          },
-          {
-            "name": "Book",
-            "is_held": true,
-            "holder": "Bob",
-            "location": "Kitchen"
-          }
-        ],
-        "entities": [
-          {
-            "name": "Alice",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Bob",
-            "location": "Kitchen",
-            "holding_objects": [
-              "Book",
-              "Apple"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Charlie",
-            "location": "Kitchen",
-            "holding_objects": [],
-            "is_holding_object": false
-          }
-        ],
-        "relations": {
-          "entity_location": {
-            "Alice": "Bedroom",
-            "Bob": "Kitchen",
-            "Charlie": "Kitchen"
-          },
-          "object_location": {},
-          "object_holder": {
-            "Book": "Bob",
-            "Apple": "Bob"
+            "Apple": "Bob",
+            "Book": "Bob"
           }
         }
       }
@@ -505,28 +508,30 @@
           {
             "name": "Apple",
             "is_held": true,
-            "holder": "Bob",
-            "location": "Kitchen"
+            "holder": "Alice",
+            "location": "Bedroom"
           },
           {
             "name": "Book",
-            "is_held": false,
-            "holder": null,
-            "location": "Kitchen"
+            "is_held": true,
+            "holder": "Bob",
+            "location": "Bedroom"
           }
         ],
         "entities": [
           {
             "name": "Alice",
             "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
+            "holding_objects": [
+              "Apple"
+            ],
+            "is_holding_object": true
           },
           {
             "name": "Bob",
-            "location": "Kitchen",
+            "location": "Bedroom",
             "holding_objects": [
-              "Apple"
+              "Book"
             ],
             "is_holding_object": true
           },
@@ -540,14 +545,13 @@
         "relations": {
           "entity_location": {
             "Alice": "Bedroom",
-            "Bob": "Kitchen",
+            "Bob": "Bedroom",
             "Charlie": "Kitchen"
           },
-          "object_location": {
-            "Book": "Kitchen"
-          },
+          "object_location": {},
           "object_holder": {
-            "Apple": "Bob"
+            "Apple": "Alice",
+            "Book": "Bob"
           }
         }
       }
@@ -559,30 +563,30 @@
           {
             "name": "Apple",
             "is_held": true,
-            "holder": "Bob",
-            "location": "Office"
+            "holder": "Alice",
+            "location": "Bedroom"
           },
           {
             "name": "Book",
             "is_held": false,
             "holder": null,
-            "location": "Kitchen"
+            "location": "Bedroom"
           }
         ],
         "entities": [
           {
             "name": "Alice",
             "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Bob",
-            "location": "Office",
             "holding_objects": [
               "Apple"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Bob",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
           },
           {
             "name": "Charlie",
@@ -594,14 +598,14 @@
         "relations": {
           "entity_location": {
             "Alice": "Bedroom",
-            "Bob": "Office",
+            "Bob": "Bedroom",
             "Charlie": "Kitchen"
           },
           "object_location": {
-            "Book": "Kitchen"
+            "Book": "Bedroom"
           },
           "object_holder": {
-            "Apple": "Bob"
+            "Apple": "Alice"
           }
         }
       }
@@ -614,13 +618,13 @@
             "name": "Apple",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Bedroom"
           },
           {
             "name": "Book",
             "is_held": false,
             "holder": null,
-            "location": "Kitchen"
+            "location": "Bedroom"
           }
         ],
         "entities": [
@@ -632,7 +636,7 @@
           },
           {
             "name": "Bob",
-            "location": "Office",
+            "location": "Bedroom",
             "holding_objects": [],
             "is_holding_object": false
           },
@@ -646,12 +650,12 @@
         "relations": {
           "entity_location": {
             "Alice": "Bedroom",
-            "Bob": "Office",
+            "Bob": "Bedroom",
             "Charlie": "Kitchen"
           },
           "object_location": {
-            "Book": "Kitchen",
-            "Apple": "Office"
+            "Book": "Bedroom",
+            "Apple": "Bedroom"
           },
           "object_holder": {}
         }
@@ -665,13 +669,13 @@
             "name": "Apple",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Bedroom"
           },
           {
             "name": "Book",
             "is_held": false,
             "holder": null,
-            "location": "Kitchen"
+            "location": "Bedroom"
           }
         ],
         "entities": [
@@ -683,13 +687,13 @@
           },
           {
             "name": "Bob",
-            "location": "Kitchen",
+            "location": "Bedroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Charlie",
-            "location": "Kitchen",
+            "location": "Office",
             "holding_objects": [],
             "is_holding_object": false
           }
@@ -697,12 +701,12 @@
         "relations": {
           "entity_location": {
             "Alice": "Bedroom",
-            "Bob": "Kitchen",
-            "Charlie": "Kitchen"
+            "Bob": "Bedroom",
+            "Charlie": "Office"
           },
           "object_location": {
-            "Book": "Kitchen",
-            "Apple": "Office"
+            "Book": "Bedroom",
+            "Apple": "Bedroom"
           },
           "object_holder": {}
         }

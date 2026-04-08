@@ -169,35 +169,6 @@ class State:
         """
         self.entity_loc.pop(entity, None)
 
-    def valid_actions(self, obj) -> list[Actions]:
-        """
-        Returns a list of valid actions given an object
-        """
-        # Move is always added as a valid action (Entities can move anywhere anytime)
-        valids: list[Actions] = ["move"]
-        if self.is_held(obj):
-            # If held, being dropped is immediately a valid action
-            valids.append("drop")
-            holder = self.who_has(obj)
-            holder_loc = self.where_is_ent(holder)
-            other_ents = [
-                ent
-                for ent, loc in self.entity_loc.items()
-                if loc == holder_loc and ent != holder
-            ]
-            if len(other_ents) > 0:
-                valids.append("pass")
-
-        else:
-            obj_loc = self.where_is_obj(obj)
-            ent_same_loc = [
-                ent for ent, loc in self.entity_loc.items() if loc == obj_loc
-            ]
-            if len(ent_same_loc) > 0:
-                valids.append("pick")
-
-        return valids
-
     def enumerate_valid_actions(self) -> list[ActionSpec]:
         actions = []
 

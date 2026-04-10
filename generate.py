@@ -1,8 +1,10 @@
+from random import seed
 from strd.core.state import Actions
 from strd.core.simulation import Simulation
 from entity_list.entities import ENTITIES
 from entity_list.objects import OBJECTS
 from entity_list.locations import LOCATIONS
+import sys
 import json
 
 
@@ -86,7 +88,7 @@ def run_test(episode_id: str):
         objects=OBJECTS,
         locations=LOCATIONS,
         action_type_weights=action_weights,
-        distractor_p=0.1,
+        distractor_p=0.2,
         sample_size=10,
     )
 
@@ -95,4 +97,7 @@ def run_test(episode_id: str):
 
 
 if __name__ == "__main__":
-    run_test(episode_id="ep_0001")
+    if len(sys.argv) <= 1:
+        print("Please input episode number: generate.py ep_[number]")
+    else:
+        run_test(episode_id=sys.argv[1])

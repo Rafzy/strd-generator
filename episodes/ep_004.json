@@ -1,0 +1,2881 @@
+{
+  "episode_id": "ep_004",
+  "seed": null,
+  "config": {
+    "max_steps": 15,
+    "distractor_p": 0.2
+  },
+  "world": {
+    "entities": [
+      "Tina",
+      "Aaron",
+      "George",
+      "Xenia",
+      "Ethan",
+      "Diana",
+      "Bob",
+      "Laura",
+      "Ophelia",
+      "Bianca"
+    ],
+    "objects": [
+      "Shoes",
+      "Card",
+      "Pen",
+      "Blanket",
+      "Soap",
+      "Flashlight",
+      "Umbrella",
+      "Ring",
+      "Rope",
+      "Letter"
+    ],
+    "locations": [
+      "ConferenceRoom",
+      "Canteen",
+      "Bedroom",
+      "Greenhouse",
+      "Reception",
+      "Gym",
+      "Attic",
+      "LaundryRoom",
+      "Auditorium",
+      "Archive"
+    ]
+  },
+  "initial_state": {
+    "objects": [
+      {
+        "name": "Shoes",
+        "is_held": false,
+        "holder": null,
+        "location": "Auditorium"
+      },
+      {
+        "name": "Card",
+        "is_held": true,
+        "holder": "Aaron",
+        "location": "Attic"
+      },
+      {
+        "name": "Pen",
+        "is_held": true,
+        "holder": "Laura",
+        "location": "Reception"
+      },
+      {
+        "name": "Blanket",
+        "is_held": true,
+        "holder": "Laura",
+        "location": "Reception"
+      },
+      {
+        "name": "Soap",
+        "is_held": false,
+        "holder": null,
+        "location": "Canteen"
+      },
+      {
+        "name": "Flashlight",
+        "is_held": true,
+        "holder": "Ophelia",
+        "location": "Archive"
+      },
+      {
+        "name": "Umbrella",
+        "is_held": false,
+        "holder": null,
+        "location": "Gym"
+      },
+      {
+        "name": "Ring",
+        "is_held": false,
+        "holder": null,
+        "location": "Archive"
+      },
+      {
+        "name": "Rope",
+        "is_held": true,
+        "holder": "Laura",
+        "location": "Reception"
+      },
+      {
+        "name": "Letter",
+        "is_held": false,
+        "holder": null,
+        "location": "Gym"
+      }
+    ],
+    "entities": [
+      {
+        "name": "Tina",
+        "location": "Archive",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Aaron",
+        "location": "Attic",
+        "holding_objects": [
+          "Card"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "George",
+        "location": "Bedroom",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Xenia",
+        "location": "Gym",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Ethan",
+        "location": "Canteen",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Diana",
+        "location": "Canteen",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Bob",
+        "location": "ConferenceRoom",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Laura",
+        "location": "Reception",
+        "holding_objects": [
+          "Pen",
+          "Blanket",
+          "Rope"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Ophelia",
+        "location": "Archive",
+        "holding_objects": [
+          "Flashlight"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Bianca",
+        "location": "Reception",
+        "holding_objects": [],
+        "is_holding_object": false
+      }
+    ],
+    "relations": {
+      "entity_location": {
+        "Tina": "Archive",
+        "Aaron": "Attic",
+        "George": "Bedroom",
+        "Xenia": "Gym",
+        "Ethan": "Canteen",
+        "Diana": "Canteen",
+        "Bob": "ConferenceRoom",
+        "Laura": "Reception",
+        "Ophelia": "Archive",
+        "Bianca": "Reception"
+      },
+      "object_location": {
+        "Shoes": "Auditorium",
+        "Soap": "Canteen",
+        "Umbrella": "Gym",
+        "Ring": "Archive",
+        "Letter": "Gym"
+      },
+      "object_holder": {
+        "Card": "Aaron",
+        "Pen": "Laura",
+        "Blanket": "Laura",
+        "Flashlight": "Ophelia",
+        "Rope": "Laura"
+      }
+    }
+  },
+  "actions": [
+    {
+      "action": "drop",
+      "order": 1,
+      "entity": "Laura",
+      "obj": "Blanket",
+      "location": "Reception",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pass",
+      "order": 2,
+      "entity": "Laura",
+      "obj": "Rope",
+      "location": "Reception",
+      "to_entity": "Bianca",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 3,
+      "entity": "Xenia",
+      "obj": "Letter",
+      "location": "Gym",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 4,
+      "entity": "Ethan",
+      "obj": "Soap",
+      "location": "Canteen",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "drop",
+      "order": 5,
+      "entity": "Xenia",
+      "obj": "Letter",
+      "location": "Gym",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "move",
+      "order": 6,
+      "entity": "Ethan",
+      "obj": null,
+      "location": "Canteen",
+      "to_entity": null,
+      "to_location": "Archive",
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 7,
+      "entity": "Tina",
+      "obj": "Ring",
+      "location": "Archive",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "drop",
+      "order": 8,
+      "entity": "Ethan",
+      "obj": "Soap",
+      "location": "Archive",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 9,
+      "entity": "Xenia",
+      "obj": "Umbrella",
+      "location": "Gym",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pass",
+      "order": 10,
+      "entity": "Xenia",
+      "obj": "Umbrella",
+      "location": "Gym",
+      "to_entity": "Aaron",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    },
+    {
+      "action": "pick",
+      "order": 11,
+      "entity": "Bob",
+      "obj": "Blanket",
+      "location": "Reception",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    },
+    {
+      "action": "drop",
+      "order": 12,
+      "entity": "Ophelia",
+      "obj": "Flashlight",
+      "location": "Archive",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "drop",
+      "order": 13,
+      "entity": "Bianca",
+      "obj": "Rope",
+      "location": "Reception",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "move",
+      "order": 14,
+      "entity": "Ophelia",
+      "obj": null,
+      "location": "Archive",
+      "to_entity": null,
+      "to_location": "Reception",
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pass",
+      "order": 15,
+      "entity": "Xenia",
+      "obj": "Umbrella",
+      "location": "Gym",
+      "to_entity": "Aaron",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    }
+  ],
+  "timeline": [
+    {
+      "order": 1,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Canteen"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Ethan",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen",
+              "Rope"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Canteen",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Soap": "Canteen",
+            "Umbrella": "Gym",
+            "Ring": "Archive",
+            "Letter": "Gym",
+            "Blanket": "Reception"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Laura"
+          }
+        }
+      }
+    },
+    {
+      "order": 2,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Canteen"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Ethan",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Canteen",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Soap": "Canteen",
+            "Umbrella": "Gym",
+            "Ring": "Archive",
+            "Letter": "Gym",
+            "Blanket": "Reception"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca"
+          }
+        }
+      }
+    },
+    {
+      "order": 3,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Canteen"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Letter"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Canteen",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Soap": "Canteen",
+            "Umbrella": "Gym",
+            "Ring": "Archive",
+            "Blanket": "Reception"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Letter": "Xenia"
+          }
+        }
+      }
+    },
+    {
+      "order": 4,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": true,
+            "holder": "Ethan",
+            "location": "Canteen"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Letter"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Canteen",
+            "holding_objects": [
+              "Soap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Canteen",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Umbrella": "Gym",
+            "Ring": "Archive",
+            "Blanket": "Reception"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Letter": "Xenia",
+            "Soap": "Ethan"
+          }
+        }
+      }
+    },
+    {
+      "order": 5,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": true,
+            "holder": "Ethan",
+            "location": "Canteen"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Ethan",
+            "location": "Canteen",
+            "holding_objects": [
+              "Soap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Canteen",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Umbrella": "Gym",
+            "Ring": "Archive",
+            "Blanket": "Reception",
+            "Letter": "Gym"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Soap": "Ethan"
+          }
+        }
+      }
+    },
+    {
+      "order": 6,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": true,
+            "holder": "Ethan",
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [
+              "Soap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Umbrella": "Gym",
+            "Ring": "Archive",
+            "Blanket": "Reception",
+            "Letter": "Gym"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Soap": "Ethan"
+          }
+        }
+      }
+    },
+    {
+      "order": 7,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": true,
+            "holder": "Ethan",
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [
+              "Soap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Umbrella": "Gym",
+            "Blanket": "Reception",
+            "Letter": "Gym"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Soap": "Ethan",
+            "Ring": "Tina"
+          }
+        }
+      }
+    },
+    {
+      "order": 8,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Umbrella": "Gym",
+            "Blanket": "Reception",
+            "Letter": "Gym",
+            "Soap": "Archive"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Ring": "Tina"
+          }
+        }
+      }
+    },
+    {
+      "order": 9,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Blanket": "Reception",
+            "Letter": "Gym",
+            "Soap": "Archive"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Ring": "Tina",
+            "Umbrella": "Xenia"
+          }
+        }
+      }
+    },
+    {
+      "order": 10,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Blanket": "Reception",
+            "Letter": "Gym",
+            "Soap": "Archive"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Ring": "Tina",
+            "Umbrella": "Xenia"
+          }
+        }
+      }
+    },
+    {
+      "order": 11,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": true,
+            "holder": "Ophelia",
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [
+              "Flashlight"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Blanket": "Reception",
+            "Letter": "Gym",
+            "Soap": "Archive"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Flashlight": "Ophelia",
+            "Rope": "Bianca",
+            "Ring": "Tina",
+            "Umbrella": "Xenia"
+          }
+        }
+      }
+    },
+    {
+      "order": 12,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": true,
+            "holder": "Bianca",
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [
+              "Rope"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Blanket": "Reception",
+            "Letter": "Gym",
+            "Soap": "Archive",
+            "Flashlight": "Archive"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Rope": "Bianca",
+            "Ring": "Tina",
+            "Umbrella": "Xenia"
+          }
+        }
+      }
+    },
+    {
+      "order": 13,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Archive",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Blanket": "Reception",
+            "Letter": "Gym",
+            "Soap": "Archive",
+            "Flashlight": "Archive",
+            "Rope": "Reception"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Ring": "Tina",
+            "Umbrella": "Xenia"
+          }
+        }
+      }
+    },
+    {
+      "order": 14,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Reception",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Blanket": "Reception",
+            "Letter": "Gym",
+            "Soap": "Archive",
+            "Flashlight": "Archive",
+            "Rope": "Reception"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Ring": "Tina",
+            "Umbrella": "Xenia"
+          }
+        }
+      }
+    },
+    {
+      "order": 15,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Auditorium"
+          },
+          {
+            "name": "Card",
+            "is_held": true,
+            "holder": "Aaron",
+            "location": "Attic"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Laura",
+            "location": "Reception"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Soap",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Archive"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Xenia",
+            "location": "Gym"
+          },
+          {
+            "name": "Ring",
+            "is_held": true,
+            "holder": "Tina",
+            "location": "Archive"
+          },
+          {
+            "name": "Rope",
+            "is_held": false,
+            "holder": null,
+            "location": "Reception"
+          },
+          {
+            "name": "Letter",
+            "is_held": false,
+            "holder": null,
+            "location": "Gym"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Tina",
+            "location": "Archive",
+            "holding_objects": [
+              "Ring"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "Attic",
+            "holding_objects": [
+              "Card"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "George",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Gym",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ethan",
+            "location": "Archive",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Diana",
+            "location": "Canteen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bob",
+            "location": "ConferenceRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Laura",
+            "location": "Reception",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ophelia",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Bianca",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Tina": "Archive",
+            "Aaron": "Attic",
+            "George": "Bedroom",
+            "Xenia": "Gym",
+            "Ethan": "Archive",
+            "Diana": "Canteen",
+            "Bob": "ConferenceRoom",
+            "Laura": "Reception",
+            "Ophelia": "Reception",
+            "Bianca": "Reception"
+          },
+          "object_location": {
+            "Shoes": "Auditorium",
+            "Blanket": "Reception",
+            "Letter": "Gym",
+            "Soap": "Archive",
+            "Flashlight": "Archive",
+            "Rope": "Reception"
+          },
+          "object_holder": {
+            "Card": "Aaron",
+            "Pen": "Laura",
+            "Ring": "Tina",
+            "Umbrella": "Xenia"
+          }
+        }
+      }
+    }
+  ]
+}

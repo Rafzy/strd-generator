@@ -1,0 +1,2855 @@
+{
+  "episode_id": "ep_0003",
+  "seed": null,
+  "config": {
+    "max_steps": 15,
+    "distractor_p": 0.2
+  },
+  "world": {
+    "entities": [
+      "Hannah",
+      "Peter",
+      "Umar",
+      "Alice",
+      "Rachel",
+      "Delia",
+      "Quentin",
+      "Xenia",
+      "Aaron",
+      "Fiona"
+    ],
+    "objects": [
+      "Lantern",
+      "Notebook",
+      "Umbrella",
+      "Flashlight",
+      "BottleCap",
+      "Jacket",
+      "Wallet",
+      "Shoes",
+      "Pen",
+      "Key"
+    ],
+    "locations": [
+      "Bedroom",
+      "Reception",
+      "Office",
+      "Bathroom",
+      "Roof",
+      "LaundryRoom",
+      "LockerRoom",
+      "RecordRoom",
+      "Playroom",
+      "Greenhouse"
+    ]
+  },
+  "initial_state": {
+    "objects": [
+      {
+        "name": "Lantern",
+        "is_held": false,
+        "holder": null,
+        "location": "Playroom"
+      },
+      {
+        "name": "Notebook",
+        "is_held": false,
+        "holder": null,
+        "location": "Playroom"
+      },
+      {
+        "name": "Umbrella",
+        "is_held": false,
+        "holder": null,
+        "location": "LaundryRoom"
+      },
+      {
+        "name": "Flashlight",
+        "is_held": false,
+        "holder": null,
+        "location": "Office"
+      },
+      {
+        "name": "BottleCap",
+        "is_held": true,
+        "holder": "Rachel",
+        "location": "Roof"
+      },
+      {
+        "name": "Jacket",
+        "is_held": false,
+        "holder": null,
+        "location": "LockerRoom"
+      },
+      {
+        "name": "Wallet",
+        "is_held": true,
+        "holder": "Quentin",
+        "location": "LockerRoom"
+      },
+      {
+        "name": "Shoes",
+        "is_held": true,
+        "holder": "Hannah",
+        "location": "Playroom"
+      },
+      {
+        "name": "Pen",
+        "is_held": true,
+        "holder": "Umar",
+        "location": "Roof"
+      },
+      {
+        "name": "Key",
+        "is_held": false,
+        "holder": null,
+        "location": "Greenhouse"
+      }
+    ],
+    "entities": [
+      {
+        "name": "Hannah",
+        "location": "Playroom",
+        "holding_objects": [
+          "Shoes"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Peter",
+        "location": "Playroom",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Umar",
+        "location": "Roof",
+        "holding_objects": [
+          "Pen"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Alice",
+        "location": "Reception",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Rachel",
+        "location": "Roof",
+        "holding_objects": [
+          "BottleCap"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Delia",
+        "location": "Bedroom",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Quentin",
+        "location": "LockerRoom",
+        "holding_objects": [
+          "Wallet"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Xenia",
+        "location": "Bathroom",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Aaron",
+        "location": "Bedroom",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Fiona",
+        "location": "LaundryRoom",
+        "holding_objects": [],
+        "is_holding_object": false
+      }
+    ],
+    "relations": {
+      "entity_location": {
+        "Hannah": "Playroom",
+        "Peter": "Playroom",
+        "Umar": "Roof",
+        "Alice": "Reception",
+        "Rachel": "Roof",
+        "Delia": "Bedroom",
+        "Quentin": "LockerRoom",
+        "Xenia": "Bathroom",
+        "Aaron": "Bedroom",
+        "Fiona": "LaundryRoom"
+      },
+      "object_location": {
+        "Lantern": "Playroom",
+        "Notebook": "Playroom",
+        "Umbrella": "LaundryRoom",
+        "Flashlight": "Office",
+        "Jacket": "LockerRoom",
+        "Key": "Greenhouse"
+      },
+      "object_holder": {
+        "BottleCap": "Rachel",
+        "Wallet": "Quentin",
+        "Shoes": "Hannah",
+        "Pen": "Umar"
+      }
+    }
+  },
+  "actions": [
+    {
+      "action": "drop",
+      "order": 1,
+      "entity": "Hannah",
+      "obj": "Shoes",
+      "location": "Playroom",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 2,
+      "entity": "Peter",
+      "obj": "Lantern",
+      "location": "Playroom",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "drop",
+      "order": 3,
+      "entity": "Quentin",
+      "obj": "Wallet",
+      "location": "LockerRoom",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 4,
+      "entity": "Hannah",
+      "obj": "Shoes",
+      "location": "Playroom",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 5,
+      "entity": "Xenia",
+      "obj": "Key",
+      "location": "Greenhouse",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    },
+    {
+      "action": "pick",
+      "order": 6,
+      "entity": "Fiona",
+      "obj": "Umbrella",
+      "location": "LaundryRoom",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "move",
+      "order": 7,
+      "entity": "Fiona",
+      "obj": null,
+      "location": "LaundryRoom",
+      "to_entity": null,
+      "to_location": "Office",
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pass",
+      "order": 8,
+      "entity": "Rachel",
+      "obj": "BottleCap",
+      "location": "Roof",
+      "to_entity": "Umar",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 9,
+      "entity": "Aaron",
+      "obj": "Flashlight",
+      "location": "Office",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    },
+    {
+      "action": "pass",
+      "order": 10,
+      "entity": "Hannah",
+      "obj": "Shoes",
+      "location": "Playroom",
+      "to_entity": "Peter",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pick",
+      "order": 11,
+      "entity": "Peter",
+      "obj": "Notebook",
+      "location": "Playroom",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "drop",
+      "order": 12,
+      "entity": "Umar",
+      "obj": "Pen",
+      "location": "Roof",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "move",
+      "order": 13,
+      "entity": "Xenia",
+      "obj": null,
+      "location": "Bathroom",
+      "to_entity": null,
+      "to_location": "Playroom",
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pass",
+      "order": 14,
+      "entity": "Umar",
+      "obj": "BottleCap",
+      "location": "Roof",
+      "to_entity": "Rachel",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pass",
+      "order": 15,
+      "entity": "Hannah",
+      "obj": "Wallet",
+      "location": "Playroom",
+      "to_entity": "Xenia",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    }
+  ],
+  "timeline": [
+    {
+      "order": 1,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "LaundryRoom"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": true,
+            "holder": "Quentin",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [
+              "Wallet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "LaundryRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "LaundryRoom"
+          },
+          "object_location": {
+            "Lantern": "Playroom",
+            "Notebook": "Playroom",
+            "Umbrella": "LaundryRoom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Shoes": "Playroom"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Wallet": "Quentin",
+            "Pen": "Umar"
+          }
+        }
+      }
+    },
+    {
+      "order": 2,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "LaundryRoom"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": true,
+            "holder": "Quentin",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [
+              "Wallet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "LaundryRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "LaundryRoom"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Umbrella": "LaundryRoom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Shoes": "Playroom"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Wallet": "Quentin",
+            "Pen": "Umar",
+            "Lantern": "Peter"
+          }
+        }
+      }
+    },
+    {
+      "order": 3,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "LaundryRoom"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "LaundryRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "LaundryRoom"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Umbrella": "LaundryRoom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Shoes": "Playroom",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Pen": "Umar",
+            "Lantern": "Peter"
+          }
+        }
+      }
+    },
+    {
+      "order": 4,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "LaundryRoom"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Hannah",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [
+              "Shoes"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "LaundryRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "LaundryRoom"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Umbrella": "LaundryRoom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Pen": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Hannah"
+          }
+        }
+      }
+    },
+    {
+      "order": 5,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": false,
+            "holder": null,
+            "location": "LaundryRoom"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Hannah",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [
+              "Shoes"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "LaundryRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "LaundryRoom"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Umbrella": "LaundryRoom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Pen": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Hannah"
+          }
+        }
+      }
+    },
+    {
+      "order": 6,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LaundryRoom"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Hannah",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [
+              "Shoes"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "LaundryRoom",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "LaundryRoom"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Pen": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Hannah",
+            "Umbrella": "Fiona"
+          }
+        }
+      }
+    },
+    {
+      "order": 7,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Hannah",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [
+              "Shoes"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Pen": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Hannah",
+            "Umbrella": "Fiona"
+          }
+        }
+      }
+    },
+    {
+      "order": 8,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Hannah",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [
+              "Shoes"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap",
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Umar",
+            "Pen": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Hannah",
+            "Umbrella": "Fiona"
+          }
+        }
+      }
+    },
+    {
+      "order": 9,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Hannah",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [
+              "Shoes"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap",
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Umar",
+            "Pen": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Hannah",
+            "Umbrella": "Fiona"
+          }
+        }
+      }
+    },
+    {
+      "order": 10,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": false,
+            "holder": null,
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern",
+              "Shoes"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap",
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Notebook": "Playroom",
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Umar",
+            "Pen": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Peter",
+            "Umbrella": "Fiona"
+          }
+        }
+      }
+    },
+    {
+      "order": 11,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern",
+              "Shoes",
+              "Notebook"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap",
+              "Pen"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom"
+          },
+          "object_holder": {
+            "BottleCap": "Umar",
+            "Pen": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Peter",
+            "Umbrella": "Fiona",
+            "Notebook": "Peter"
+          }
+        }
+      }
+    },
+    {
+      "order": 12,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": false,
+            "holder": null,
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern",
+              "Shoes",
+              "Notebook"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Bathroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Bathroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom",
+            "Pen": "Roof"
+          },
+          "object_holder": {
+            "BottleCap": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Peter",
+            "Umbrella": "Fiona",
+            "Notebook": "Peter"
+          }
+        }
+      }
+    },
+    {
+      "order": 13,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Umar",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": false,
+            "holder": null,
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern",
+              "Shoes",
+              "Notebook"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Playroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom",
+            "Pen": "Roof"
+          },
+          "object_holder": {
+            "BottleCap": "Umar",
+            "Lantern": "Peter",
+            "Shoes": "Peter",
+            "Umbrella": "Fiona",
+            "Notebook": "Peter"
+          }
+        }
+      }
+    },
+    {
+      "order": 14,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": false,
+            "holder": null,
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern",
+              "Shoes",
+              "Notebook"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Playroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom",
+            "Pen": "Roof"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Lantern": "Peter",
+            "Shoes": "Peter",
+            "Umbrella": "Fiona",
+            "Notebook": "Peter"
+          }
+        }
+      }
+    },
+    {
+      "order": 15,
+      "snapshot": {
+        "objects": [
+          {
+            "name": "Lantern",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Notebook",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Umbrella",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "Office"
+          },
+          {
+            "name": "Flashlight",
+            "is_held": false,
+            "holder": null,
+            "location": "Office"
+          },
+          {
+            "name": "BottleCap",
+            "is_held": true,
+            "holder": "Rachel",
+            "location": "Roof"
+          },
+          {
+            "name": "Jacket",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Wallet",
+            "is_held": false,
+            "holder": null,
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Shoes",
+            "is_held": true,
+            "holder": "Peter",
+            "location": "Playroom"
+          },
+          {
+            "name": "Pen",
+            "is_held": false,
+            "holder": null,
+            "location": "Roof"
+          },
+          {
+            "name": "Key",
+            "is_held": false,
+            "holder": null,
+            "location": "Greenhouse"
+          }
+        ],
+        "entities": [
+          {
+            "name": "Hannah",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Peter",
+            "location": "Playroom",
+            "holding_objects": [
+              "Lantern",
+              "Shoes",
+              "Notebook"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Umar",
+            "location": "Roof",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Alice",
+            "location": "Reception",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Rachel",
+            "location": "Roof",
+            "holding_objects": [
+              "BottleCap"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Delia",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Quentin",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Xenia",
+            "location": "Playroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Aaron",
+            "location": "Bedroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Fiona",
+            "location": "Office",
+            "holding_objects": [
+              "Umbrella"
+            ],
+            "is_holding_object": true
+          }
+        ],
+        "relations": {
+          "entity_location": {
+            "Hannah": "Playroom",
+            "Peter": "Playroom",
+            "Umar": "Roof",
+            "Alice": "Reception",
+            "Rachel": "Roof",
+            "Delia": "Bedroom",
+            "Quentin": "LockerRoom",
+            "Xenia": "Playroom",
+            "Aaron": "Bedroom",
+            "Fiona": "Office"
+          },
+          "object_location": {
+            "Flashlight": "Office",
+            "Jacket": "LockerRoom",
+            "Key": "Greenhouse",
+            "Wallet": "LockerRoom",
+            "Pen": "Roof"
+          },
+          "object_holder": {
+            "BottleCap": "Rachel",
+            "Lantern": "Peter",
+            "Shoes": "Peter",
+            "Umbrella": "Fiona",
+            "Notebook": "Peter"
+          }
+        }
+      }
+    }
+  ]
+}

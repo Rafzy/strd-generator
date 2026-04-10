@@ -1,4 +1,3 @@
-from random import seed
 from strd.core.state import Actions
 from strd.core.simulation import Simulation
 from entity_list.entities import ENTITIES

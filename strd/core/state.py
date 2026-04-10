@@ -1,5 +1,5 @@
 import random
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from typing import Optional, Literal
 
 type Actions = Literal["pick", "drop", "pass", "move"]

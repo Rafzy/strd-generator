@@ -12,16 +12,16 @@ def format_action(log: dict) -> str:
     action = log["action"]
 
     if action == "pick":
-        return f"{log['entity']} picked up {log['obj']} at {log['location']}"
+        return f"{log['entity']} picked up {log['obj']} at {log['location']} {'(Distrator)' if log['distractor_action'] else ''}"
     elif action == "drop":
-        return f"{log['entity']} dropped {log['obj']} at {log['location']}"
+        return f"{log['entity']} dropped {log['obj']} at {log['location']} {'(Distrator)' if log['distractor_action'] else ''}"
     elif action == "pass":
         return (
             f"{log['entity']} passed {log['obj']} "
-            f"to {log['to_entity']} at {log['location']}"
+            f"to {log['to_entity']} at {log['location']} {'(Distrator)' if log['distractor_action'] else ''}"
         )
     elif action == "move":
-        return f"{log['entity']} moved from {log['location']} to {log['to_location']}"
+        return f"{log['entity']} moved from {log['location']} to {log['to_location']} {'(Distrator)' if log['distractor_action'] else ''}"
 
     return f"ERROR: {log.get('error_log', 'Unknown error')}"
 
@@ -87,6 +87,7 @@ def run_test(episode_id: str):
         objects=objects,
         locations=locations,
         action_type_weights=action_weights,
+        distractor_p=0,
     )
 
     print_simulation(episode)

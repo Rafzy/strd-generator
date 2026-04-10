@@ -15,6 +15,7 @@ class ActionLog:
     to_entity: Optional[str] = None
     to_location: Optional[str] = None
     error_log: Optional[str] = None
+    distractor_action: Optional[bool] = False
 
 
 @dataclass
@@ -170,6 +171,16 @@ class State:
         self.entity_loc.pop(entity, None)
 
     def enumerate_valid_actions(self) -> list[ActionSpec]:
+        """
+        Return all possible valid actions
+        Shape:
+        action: Literal["pick", "drop", "pass", "move"]
+        entity: Optional[str] = None
+        obj: Optional[str] = None
+        location: Optional[str] = None
+        to_entity: Optional[str] = None
+        to_location: Optional[str] = None
+        """
         actions = []
 
         # move
@@ -215,6 +226,65 @@ class State:
                             obj=obj,
                             location=holder_loc,
                             to_entity=ent,
+                        )
+                    )
+
+        return actions
+
+    def enumerate_invalid_actions(self) -> list[ActionSpec]:
+        """
+        Enumerate all invalid actions
+        Used for distractors
+        """
+        actions = []
+
+        # pass
+        # Passing to another entity that's not in the same location
+        for obj, holder in self.object_holder.items():
+            holder_loc = self.where_is_ent(holder)
+            for ent, ent_loc in self.entity_loc.items():
+                if ent != holder and ent_loc != holder_loc:
+                    actions.append(
+                        ActionSpec(
+                            action="pass",
+                            entity=holder,
+                            obj=obj,
+                            location=holder_loc,
+                            to_entity=ent,
+                        )
+                    )
+        # Passing object that the entity is not holding
+        for ent1, ent1_loc in self.entity_loc.items():
+            for ent2, ent2_loc in self.entity_loc.items():
+                for obj, obj_loc in self.object_loc.items():
+                    if ent1_loc == ent2_loc and ent1 != ent2:
+                        actions.append(
+                            ActionSpec(
+                                action="pass",
+                                entity=ent1,
+                                obj=obj,
+                                location=ent1_loc,
+                                to_entity=ent2,
+                            )
+                        )
+
+        # pick
+        # Picking objects not in the same location
+        for obj, obj_loc in self.object_loc.items():
+            for ent, ent_loc in self.entity_loc.items():
+                if obj_loc != ent_loc:
+                    actions.append(
+                        ActionSpec(action="pick", entity=ent, obj=obj, location=obj_loc)
+                    )
+
+        # Picking objects that's already held by another entity at the same location
+        for obj, obj_holder in self.object_holder.items():
+            obj_holder_loc = self.where_is_ent(obj_holder)
+            for entity, ent_loc in self.entity_loc.items():
+                if obj_holder_loc == ent_loc and entity != obj_holder:
+                    actions.append(
+                        ActionSpec(
+                            action="pick", entity=entity, obj=obj, location=ent_loc
                         )
                     )
 

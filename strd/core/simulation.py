@@ -1,8 +1,6 @@
-import enum
 import random
-from .state import ActionSpec, State, Actions, ActionLog
-from dataclasses import asdict, dataclass
-import json
+from .state import ActionLog, ActionSpec, State, Actions
+from dataclasses import asdict
 
 
 class Simulation:
@@ -40,6 +38,7 @@ class Simulation:
         objects: list[str],
         locations: list[str],
         action_type_weights: dict[Actions, float],
+        distractor_p: float = 0,
     ) -> dict:
 
         state = State(
@@ -50,18 +49,51 @@ class Simulation:
         action_logs = []
         timeline = []
 
+        distractor_positions = set()
+
+        if distractor_p > 0:
+            distractor_num = round(self.max_steps * distractor_p)
+            distractor_positions = set(
+                random.sample(range(self.max_steps), distractor_num)
+            )
         i = 0
 
         while True:
             if i >= self.max_steps:
                 break
 
-            enumerated_valid_actions: list[ActionSpec] = state.enumerate_valid_actions()
-            # random_valid_action: ActionSpec = self.rng.choice(enumerated_valid_actions)
-            random_valid_action: ActionSpec = self.sample_weighted_action(
-                enumerated_valid_actions, action_type_weights
-            )
-            result = state.execute(random_valid_action)
+            if i in distractor_positions:
+                # If current i is in distractor position
+                enumerated_invalid_actions: list[ActionSpec] = (
+                    state.enumerate_invalid_actions()
+                )
+
+                # Dumb solution, fix this later
+                if not enumerated_invalid_actions:
+                    i += 1
+                    continue
+
+                random_invalid_action: ActionSpec = self.sample_weighted_action(
+                    enumerated_invalid_actions, action_type_weights
+                )
+                result: ActionLog = ActionLog(
+                    action=random_invalid_action.action,
+                    entity=random_invalid_action.entity,
+                    obj=random_invalid_action.obj,
+                    location=random_invalid_action.location,
+                    to_entity=random_invalid_action.to_entity,
+                    to_location=random_invalid_action.to_location,
+                    distractor_action=True,
+                )
+            else:
+                enumerated_valid_actions: list[ActionSpec] = (
+                    state.enumerate_valid_actions()
+                )
+                random_valid_action: ActionSpec = self.sample_weighted_action(
+                    enumerated_valid_actions, action_type_weights
+                )
+                result: ActionLog = state.execute(random_valid_action)
+
             state.validate()
 
             # append the log to action_logs
@@ -79,6 +111,7 @@ class Simulation:
             "seed": self.seed,
             "config": {
                 "max_steps": self.max_steps,
+                "distractor_p": distractor_p,
             },
             "world": {
                 "entities": entities,

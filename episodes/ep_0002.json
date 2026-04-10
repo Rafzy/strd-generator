@@ -2,7 +2,8 @@
   "episode_id": "ep_0002",
   "seed": 1234,
   "config": {
-    "max_steps": 10
+    "max_steps": 10,
+    "distractor_p": 0
   },
   "world": {
     "entities": [
@@ -80,7 +81,8 @@
       "location": "Kitchen",
       "to_entity": "Bob",
       "to_location": null,
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "move",
@@ -90,7 +92,8 @@
       "location": "Bedroom",
       "to_entity": null,
       "to_location": "Kitchen",
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "pass",
@@ -100,7 +103,8 @@
       "location": "Kitchen",
       "to_entity": "Alice",
       "to_location": null,
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "pass",
@@ -110,7 +114,8 @@
       "location": "Kitchen",
       "to_entity": "Bob",
       "to_location": null,
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "move",
@@ -120,7 +125,8 @@
       "location": "Kitchen",
       "to_entity": null,
       "to_location": "Bedroom",
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "move",
@@ -130,7 +136,8 @@
       "location": "Kitchen",
       "to_entity": null,
       "to_location": "Bedroom",
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "pass",
@@ -140,7 +147,8 @@
       "location": "Bedroom",
       "to_entity": "Alice",
       "to_location": null,
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "drop",
@@ -150,7 +158,8 @@
       "location": "Bedroom",
       "to_entity": null,
       "to_location": null,
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "drop",
@@ -160,7 +169,8 @@
       "location": "Bedroom",
       "to_entity": null,
       "to_location": null,
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     },
     {
       "action": "move",
@@ -170,7 +180,8 @@
       "location": "Kitchen",
       "to_entity": null,
       "to_location": "Office",
-      "error_log": null
+      "error_log": null,
+      "distractor_action": false
     }
   ],
   "timeline": [

@@ -1,5 +1,8 @@
 from strd.core.state import Actions
 from strd.core.simulation import Simulation
+from entity_list.entities import ENTITIES
+from entity_list.objects import OBJECTS
+from entity_list.locations import LOCATIONS
 import json
 
 
@@ -70,11 +73,7 @@ def print_simulation(episode: dict) -> None:
 
 
 def run_test(episode_id: str):
-    entities = ["Alice", "Bob", "Charlie"]
-    objects = ["Apple", "Book"]
-    locations = ["Kitchen", "Bedroom", "Office"]
-
-    sim = Simulation(max_steps=10, seed=1234)
+    sim = Simulation(max_steps=15)
     action_weights: dict[Actions, float] = {
         "move": 0.20,
         "pick": 0.30,
@@ -83,11 +82,12 @@ def run_test(episode_id: str):
     }
     episode = sim.export_episode(
         episode_id=episode_id,
-        entities=entities,
-        objects=objects,
-        locations=locations,
+        entities=ENTITIES,
+        objects=OBJECTS,
+        locations=LOCATIONS,
         action_type_weights=action_weights,
-        distractor_p=0,
+        distractor_p=0.1,
+        sample_size=10,
     )
 
     print_simulation(episode)
@@ -95,4 +95,4 @@ def run_test(episode_id: str):
 
 
 if __name__ == "__main__":
-    run_test(episode_id="ep_0002")
+    run_test(episode_id="ep_0001")

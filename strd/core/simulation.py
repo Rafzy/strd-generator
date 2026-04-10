@@ -39,10 +39,18 @@ class Simulation:
         locations: list[str],
         action_type_weights: dict[Actions, float],
         distractor_p: float = 0,
+        sample_size: int = 5,
     ) -> dict:
 
+        sampled_entities = self.rng.sample(entities, sample_size)
+        sampled_objects = self.rng.sample(objects, sample_size)
+        sampled_locations = self.rng.sample(locations, sample_size)
+
         state = State(
-            entities=entities, objects=objects, locations=locations, seed=self.seed
+            entities=sampled_entities,
+            objects=sampled_objects,
+            locations=sampled_locations,
+            seed=self.seed,
         )
 
         initial_state = state.take_snapshot()
@@ -114,9 +122,9 @@ class Simulation:
                 "distractor_p": distractor_p,
             },
             "world": {
-                "entities": entities,
-                "objects": objects,
-                "locations": locations,
+                "entities": sampled_entities,
+                "objects": sampled_objects,
+                "locations": sampled_locations,
             },
             "initial_state": initial_state,
             "actions": action_logs,

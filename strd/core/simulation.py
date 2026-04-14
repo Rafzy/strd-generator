@@ -120,6 +120,7 @@ class Simulation:
             "config": {
                 "max_steps": self.max_steps,
                 "distractor_p": distractor_p,
+                "sample_size": sample_size,
             },
             "world": {
                 "entities": sampled_entities,

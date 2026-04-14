@@ -20,7 +20,7 @@ class NarrationConfig:
     reveal_distractors: bool = False
     style: str = "natural"
     allow_contextual_phrasing: bool = True
-    explicit_failed_distractors: bool = True
+    explicit_failed_distractors: bool = False
 
 
 class EpisodeNarrator:
@@ -649,11 +649,14 @@ class EpisodeNarrator:
 
     def render_failed_action_clause(self, action: dict[str, Any]) -> str:
         snapshot = self._pre_action_snapshots.get(
-            action["order"],
-            self.episode["initial_state"],
+            action["order"], self.episode.get("initial_state")
         )
         action_type = action["action"]
 
+        if snapshot is None:
+            return (
+                f"{self.entity_name(action['entity'])} attempted an action that failed"
+            )
         if action_type == "move":
             return self.render_failed_move_clause(action, snapshot)
         if action_type == "pick":
@@ -752,7 +755,7 @@ def main() -> None:
         help="Omit the initial state description",
     )
     parser.add_argument(
-        "--no-action-numbers",
+        "--action-numbers",
         action="store_true",
         help="Omit action number prefixes",
     )
@@ -772,7 +775,7 @@ def main() -> None:
         help="Disable phrases like 'still in the pantry'",
     )
     parser.add_argument(
-        "--no-explicit-failed-distractors",
+        "--explicit-failed-distractors",
         action="store_true",
         help=(
             "Do not narrate distractors as failed attempts. Use this only if your "
@@ -786,12 +789,12 @@ def main() -> None:
     config = NarrationConfig(
         seed=args.seed,
         include_initial_state=not args.no_initial_state,
-        include_action_numbers=not args.no_action_numbers,
+        include_action_numbers=args.action_numbers,
         paragraph_mode=args.paragraph,
         reveal_distractors=args.reveal_distractors,
         style=args.style,
         allow_contextual_phrasing=not args.no_contextual_phrasing,
-        explicit_failed_distractors=not args.no_explicit_failed_distractors,
+        explicit_failed_distractors=args.explicit_failed_distractors,
     )
 
     narrator = EpisodeNarrator(episode, config)

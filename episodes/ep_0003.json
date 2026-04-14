@@ -1,238 +1,254 @@
 {
   "episode_id": "ep_0003",
-  "seed": null,
+  "seed": 123,
   "config": {
     "max_steps": 15,
-    "distractor_p": 0.2
+    "distractor_p": 0.3
   },
   "world": {
     "entities": [
-      "Hannah",
-      "Peter",
-      "Umar",
-      "Alice",
+      "Diana",
       "Rachel",
-      "Delia",
-      "Quentin",
-      "Xenia",
+      "Fiona",
       "Aaron",
-      "Fiona"
+      "Wesley",
+      "George",
+      "Charlie",
+      "Yusuf",
+      "Ivy",
+      "Jack"
     ],
     "objects": [
-      "Lantern",
+      "Tablet",
+      "Pillow",
+      "Bottle",
+      "Coin",
       "Notebook",
-      "Umbrella",
-      "Flashlight",
+      "Blanket",
+      "Candle",
       "BottleCap",
-      "Jacket",
-      "Wallet",
-      "Shoes",
-      "Pen",
-      "Key"
+      "Map",
+      "Card"
     ],
     "locations": [
-      "Bedroom",
-      "Reception",
-      "Office",
-      "Bathroom",
-      "Roof",
-      "LaundryRoom",
+      "Kitchen",
       "LockerRoom",
+      "DiningRoom",
+      "MusicRoom",
+      "Classroom",
+      "LivingRoom",
       "RecordRoom",
-      "Playroom",
-      "Greenhouse"
+      "Cafeteria",
+      "Courtyard",
+      "Garage"
     ]
   },
   "initial_state": {
     "objects": [
       {
-        "name": "Lantern",
+        "name": "Tablet",
+        "is_held": true,
+        "holder": "Diana",
+        "location": "Kitchen"
+      },
+      {
+        "name": "Pillow",
+        "is_held": true,
+        "holder": "George",
+        "location": "LockerRoom"
+      },
+      {
+        "name": "Bottle",
         "is_held": false,
         "holder": null,
-        "location": "Playroom"
+        "location": "MusicRoom"
+      },
+      {
+        "name": "Coin",
+        "is_held": true,
+        "holder": "Charlie",
+        "location": "Kitchen"
       },
       {
         "name": "Notebook",
         "is_held": false,
         "holder": null,
-        "location": "Playroom"
+        "location": "Garage"
       },
       {
-        "name": "Umbrella",
-        "is_held": false,
-        "holder": null,
-        "location": "LaundryRoom"
+        "name": "Blanket",
+        "is_held": true,
+        "holder": "Diana",
+        "location": "Kitchen"
       },
       {
-        "name": "Flashlight",
-        "is_held": false,
-        "holder": null,
-        "location": "Office"
+        "name": "Candle",
+        "is_held": true,
+        "holder": "Yusuf",
+        "location": "RecordRoom"
       },
       {
         "name": "BottleCap",
         "is_held": true,
-        "holder": "Rachel",
-        "location": "Roof"
+        "holder": "Diana",
+        "location": "Kitchen"
       },
       {
-        "name": "Jacket",
-        "is_held": false,
-        "holder": null,
+        "name": "Map",
+        "is_held": true,
+        "holder": "Fiona",
         "location": "LockerRoom"
       },
       {
-        "name": "Wallet",
+        "name": "Card",
         "is_held": true,
-        "holder": "Quentin",
-        "location": "LockerRoom"
-      },
-      {
-        "name": "Shoes",
-        "is_held": true,
-        "holder": "Hannah",
-        "location": "Playroom"
-      },
-      {
-        "name": "Pen",
-        "is_held": true,
-        "holder": "Umar",
-        "location": "Roof"
-      },
-      {
-        "name": "Key",
-        "is_held": false,
-        "holder": null,
-        "location": "Greenhouse"
+        "holder": "Diana",
+        "location": "Kitchen"
       }
     ],
     "entities": [
       {
-        "name": "Hannah",
-        "location": "Playroom",
+        "name": "Diana",
+        "location": "Kitchen",
         "holding_objects": [
-          "Shoes"
+          "Tablet",
+          "Blanket",
+          "BottleCap",
+          "Card"
         ],
         "is_holding_object": true
-      },
-      {
-        "name": "Peter",
-        "location": "Playroom",
-        "holding_objects": [],
-        "is_holding_object": false
-      },
-      {
-        "name": "Umar",
-        "location": "Roof",
-        "holding_objects": [
-          "Pen"
-        ],
-        "is_holding_object": true
-      },
-      {
-        "name": "Alice",
-        "location": "Reception",
-        "holding_objects": [],
-        "is_holding_object": false
       },
       {
         "name": "Rachel",
-        "location": "Roof",
-        "holding_objects": [
-          "BottleCap"
-        ],
-        "is_holding_object": true
-      },
-      {
-        "name": "Delia",
-        "location": "Bedroom",
-        "holding_objects": [],
-        "is_holding_object": false
-      },
-      {
-        "name": "Quentin",
-        "location": "LockerRoom",
-        "holding_objects": [
-          "Wallet"
-        ],
-        "is_holding_object": true
-      },
-      {
-        "name": "Xenia",
-        "location": "Bathroom",
-        "holding_objects": [],
-        "is_holding_object": false
-      },
-      {
-        "name": "Aaron",
-        "location": "Bedroom",
+        "location": "Classroom",
         "holding_objects": [],
         "is_holding_object": false
       },
       {
         "name": "Fiona",
-        "location": "LaundryRoom",
+        "location": "LockerRoom",
+        "holding_objects": [
+          "Map"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Aaron",
+        "location": "RecordRoom",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Wesley",
+        "location": "Classroom",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "George",
+        "location": "LockerRoom",
+        "holding_objects": [
+          "Pillow"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Charlie",
+        "location": "Kitchen",
+        "holding_objects": [
+          "Coin"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Yusuf",
+        "location": "RecordRoom",
+        "holding_objects": [
+          "Candle"
+        ],
+        "is_holding_object": true
+      },
+      {
+        "name": "Ivy",
+        "location": "Courtyard",
+        "holding_objects": [],
+        "is_holding_object": false
+      },
+      {
+        "name": "Jack",
+        "location": "Courtyard",
         "holding_objects": [],
         "is_holding_object": false
       }
     ],
     "relations": {
       "entity_location": {
-        "Hannah": "Playroom",
-        "Peter": "Playroom",
-        "Umar": "Roof",
-        "Alice": "Reception",
-        "Rachel": "Roof",
-        "Delia": "Bedroom",
-        "Quentin": "LockerRoom",
-        "Xenia": "Bathroom",
-        "Aaron": "Bedroom",
-        "Fiona": "LaundryRoom"
+        "Diana": "Kitchen",
+        "Rachel": "Classroom",
+        "Fiona": "LockerRoom",
+        "Aaron": "RecordRoom",
+        "Wesley": "Classroom",
+        "George": "LockerRoom",
+        "Charlie": "Kitchen",
+        "Yusuf": "RecordRoom",
+        "Ivy": "Courtyard",
+        "Jack": "Courtyard"
       },
       "object_location": {
-        "Lantern": "Playroom",
-        "Notebook": "Playroom",
-        "Umbrella": "LaundryRoom",
-        "Flashlight": "Office",
-        "Jacket": "LockerRoom",
-        "Key": "Greenhouse"
+        "Bottle": "MusicRoom",
+        "Notebook": "Garage"
       },
       "object_holder": {
-        "BottleCap": "Rachel",
-        "Wallet": "Quentin",
-        "Shoes": "Hannah",
-        "Pen": "Umar"
+        "Tablet": "Diana",
+        "Pillow": "George",
+        "Coin": "Charlie",
+        "Blanket": "Diana",
+        "Candle": "Yusuf",
+        "BottleCap": "Diana",
+        "Map": "Fiona",
+        "Card": "Diana"
       }
     }
   },
   "actions": [
     {
-      "action": "drop",
+      "action": "pass",
       "order": 1,
-      "entity": "Hannah",
-      "obj": "Shoes",
-      "location": "Playroom",
-      "to_entity": null,
+      "entity": "George",
+      "obj": "Pillow",
+      "location": "LockerRoom",
+      "to_entity": "Fiona",
       "to_location": null,
       "error_log": null,
       "distractor_action": false
     },
     {
-      "action": "pick",
+      "action": "pass",
       "order": 2,
-      "entity": "Peter",
-      "obj": "Lantern",
-      "location": "Playroom",
-      "to_entity": null,
+      "entity": "Charlie",
+      "obj": "Coin",
+      "location": "Kitchen",
+      "to_entity": "Diana",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pass",
+      "order": 3,
+      "entity": "Diana",
+      "obj": "Tablet",
+      "location": "Kitchen",
+      "to_entity": "Charlie",
       "to_location": null,
       "error_log": null,
       "distractor_action": false
     },
     {
       "action": "drop",
-      "order": 3,
-      "entity": "Quentin",
-      "obj": "Wallet",
+      "order": 4,
+      "entity": "Fiona",
+      "obj": "Map",
       "location": "LockerRoom",
       "to_entity": null,
       "to_location": null,
@@ -241,87 +257,98 @@
     },
     {
       "action": "pick",
-      "order": 4,
-      "entity": "Hannah",
-      "obj": "Shoes",
-      "location": "Playroom",
-      "to_entity": null,
-      "to_location": null,
-      "error_log": null,
-      "distractor_action": false
-    },
-    {
-      "action": "pick",
       "order": 5,
-      "entity": "Xenia",
-      "obj": "Key",
-      "location": "Greenhouse",
+      "entity": "Charlie",
+      "obj": "Notebook",
+      "location": "Garage",
       "to_entity": null,
       "to_location": null,
       "error_log": null,
       "distractor_action": true
     },
     {
-      "action": "pick",
+      "action": "pass",
       "order": 6,
-      "entity": "Fiona",
-      "obj": "Umbrella",
-      "location": "LaundryRoom",
+      "entity": "Charlie",
+      "obj": "Tablet",
+      "location": "Kitchen",
+      "to_entity": "George",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    },
+    {
+      "action": "pass",
+      "order": 7,
+      "entity": "Diana",
+      "obj": "Coin",
+      "location": "Kitchen",
+      "to_entity": "Charlie",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "drop",
+      "order": 8,
+      "entity": "Diana",
+      "obj": "Blanket",
+      "location": "Kitchen",
       "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": false
+    },
+    {
+      "action": "pass",
+      "order": 9,
+      "entity": "Yusuf",
+      "obj": "Notebook",
+      "location": "RecordRoom",
+      "to_entity": "Aaron",
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    },
+    {
+      "action": "pick",
+      "order": 10,
+      "entity": "Diana",
+      "obj": "Tablet",
+      "location": "Kitchen",
+      "to_entity": null,
+      "to_location": null,
+      "error_log": null,
+      "distractor_action": true
+    },
+    {
+      "action": "pass",
+      "order": 11,
+      "entity": "Charlie",
+      "obj": "Coin",
+      "location": "Kitchen",
+      "to_entity": "Diana",
       "to_location": null,
       "error_log": null,
       "distractor_action": false
     },
     {
       "action": "move",
-      "order": 7,
-      "entity": "Fiona",
+      "order": 12,
+      "entity": "Jack",
       "obj": null,
-      "location": "LaundryRoom",
+      "location": "Courtyard",
       "to_entity": null,
-      "to_location": "Office",
+      "to_location": "LockerRoom",
       "error_log": null,
       "distractor_action": false
     },
     {
-      "action": "pass",
-      "order": 8,
-      "entity": "Rachel",
-      "obj": "BottleCap",
-      "location": "Roof",
-      "to_entity": "Umar",
-      "to_location": null,
-      "error_log": null,
-      "distractor_action": false
-    },
-    {
-      "action": "pick",
-      "order": 9,
-      "entity": "Aaron",
-      "obj": "Flashlight",
-      "location": "Office",
-      "to_entity": null,
-      "to_location": null,
-      "error_log": null,
-      "distractor_action": true
-    },
-    {
-      "action": "pass",
-      "order": 10,
-      "entity": "Hannah",
-      "obj": "Shoes",
-      "location": "Playroom",
-      "to_entity": "Peter",
-      "to_location": null,
-      "error_log": null,
-      "distractor_action": false
-    },
-    {
-      "action": "pick",
-      "order": 11,
-      "entity": "Peter",
-      "obj": "Notebook",
-      "location": "Playroom",
+      "action": "drop",
+      "order": 13,
+      "entity": "Diana",
+      "obj": "Card",
+      "location": "Kitchen",
       "to_entity": null,
       "to_location": null,
       "error_log": null,
@@ -329,33 +356,11 @@
     },
     {
       "action": "drop",
-      "order": 12,
-      "entity": "Umar",
-      "obj": "Pen",
-      "location": "Roof",
-      "to_entity": null,
-      "to_location": null,
-      "error_log": null,
-      "distractor_action": false
-    },
-    {
-      "action": "move",
-      "order": 13,
-      "entity": "Xenia",
-      "obj": null,
-      "location": "Bathroom",
-      "to_entity": null,
-      "to_location": "Playroom",
-      "error_log": null,
-      "distractor_action": false
-    },
-    {
-      "action": "pass",
       "order": 14,
-      "entity": "Umar",
+      "entity": "Diana",
       "obj": "BottleCap",
-      "location": "Roof",
-      "to_entity": "Rachel",
+      "location": "Kitchen",
+      "to_entity": null,
       "to_location": null,
       "error_log": null,
       "distractor_action": false
@@ -363,13 +368,13 @@
     {
       "action": "pass",
       "order": 15,
-      "entity": "Hannah",
-      "obj": "Wallet",
-      "location": "Playroom",
-      "to_entity": "Xenia",
+      "entity": "Diana",
+      "obj": "Coin",
+      "location": "Kitchen",
+      "to_entity": "Charlie",
       "to_location": null,
       "error_log": null,
-      "distractor_action": true
+      "distractor_action": false
     }
   ],
   "timeline": [
@@ -378,160 +383,166 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Charlie",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
-            "is_held": false,
-            "holder": null,
-            "location": "LaundryRoom"
+            "name": "Blanket",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Flashlight",
-            "is_held": false,
-            "holder": null,
-            "location": "Office"
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
-            "is_held": false,
-            "holder": null,
+            "name": "Map",
+            "is_held": true,
+            "holder": "Fiona",
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
+            "name": "Card",
             "is_held": true,
-            "holder": "Quentin",
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
-            "is_held": false,
-            "holder": null,
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Pen"
+              "Tablet",
+              "Blanket",
+              "BottleCap",
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [
-              "Wallet"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "LaundryRoom",
+            "location": "LockerRoom",
+            "holding_objects": [
+              "Pillow",
+              "Map"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Coin"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
             "holding_objects": [],
             "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "LaundryRoom"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Lantern": "Playroom",
-            "Notebook": "Playroom",
-            "Umbrella": "LaundryRoom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Shoes": "Playroom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Wallet": "Quentin",
-            "Pen": "Umar"
+            "Tablet": "Diana",
+            "Pillow": "Fiona",
+            "Coin": "Charlie",
+            "Blanket": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Map": "Fiona",
+            "Card": "Diana"
           }
         }
       }
@@ -541,162 +552,165 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Diana",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
-            "is_held": false,
-            "holder": null,
-            "location": "LaundryRoom"
+            "name": "Blanket",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Flashlight",
-            "is_held": false,
-            "holder": null,
-            "location": "Office"
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
-            "is_held": false,
-            "holder": null,
+            "name": "Map",
+            "is_held": true,
+            "holder": "Fiona",
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
+            "name": "Card",
             "is_held": true,
-            "holder": "Quentin",
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
-            "is_held": false,
-            "holder": null,
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Lantern"
+              "Tablet",
+              "Coin",
+              "Blanket",
+              "BottleCap",
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
-              "Pen"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [
-              "Wallet"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "LaundryRoom",
+            "location": "LockerRoom",
+            "holding_objects": [
+              "Pillow",
+              "Map"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
             "holding_objects": [],
             "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "LaundryRoom"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Umbrella": "LaundryRoom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Shoes": "Playroom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Wallet": "Quentin",
-            "Pen": "Umar",
-            "Lantern": "Peter"
+            "Tablet": "Diana",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Blanket": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Map": "Fiona",
+            "Card": "Diana"
           }
         }
       }
@@ -706,160 +720,166 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
-            "is_held": false,
-            "holder": null,
-            "location": "LaundryRoom"
+            "name": "Blanket",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Flashlight",
-            "is_held": false,
-            "holder": null,
-            "location": "Office"
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
-            "is_held": false,
-            "holder": null,
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
+            "name": "Map",
             "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
+            "holder": "Fiona",
+            "location": "LockerRoom"
           },
           {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "name": "Card",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Lantern"
+              "Coin",
+              "Blanket",
+              "BottleCap",
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
-              "Pen"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "LaundryRoom",
+            "location": "LockerRoom",
+            "holding_objects": [
+              "Pillow",
+              "Map"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
             "holding_objects": [],
             "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "LaundryRoom"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Umbrella": "LaundryRoom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Shoes": "Playroom",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Pen": "Umar",
-            "Lantern": "Peter"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Blanket": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Map": "Fiona",
+            "Card": "Diana"
           }
         }
       }
@@ -869,162 +889,165 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
-            "is_held": false,
-            "holder": null,
-            "location": "LaundryRoom"
+            "name": "Blanket",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Flashlight",
-            "is_held": false,
-            "holder": null,
-            "location": "Office"
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Hannah",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Shoes"
+              "Coin",
+              "Blanket",
+              "BottleCap",
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [
-              "Lantern"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
-              "Pen"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "LaundryRoom",
+            "location": "LockerRoom",
+            "holding_objects": [
+              "Pillow"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
             "holding_objects": [],
             "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "LaundryRoom"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Umbrella": "LaundryRoom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Pen": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Hannah"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Blanket": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -1034,162 +1057,165 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
-            "is_held": false,
-            "holder": null,
-            "location": "LaundryRoom"
+            "name": "Blanket",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Flashlight",
-            "is_held": false,
-            "holder": null,
-            "location": "Office"
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Hannah",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Shoes"
+              "Coin",
+              "Blanket",
+              "BottleCap",
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [
-              "Lantern"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
-              "Pen"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "LaundryRoom",
+            "location": "LockerRoom",
+            "holding_objects": [
+              "Pillow"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
             "holding_objects": [],
             "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "LaundryRoom"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Umbrella": "LaundryRoom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Pen": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Hannah"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Blanket": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -1199,164 +1225,165 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
+            "name": "Blanket",
             "is_held": true,
-            "holder": "Fiona",
-            "location": "LaundryRoom"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Flashlight",
-            "is_held": false,
-            "holder": null,
-            "location": "Office"
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Hannah",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Shoes"
+              "Coin",
+              "Blanket",
+              "BottleCap",
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [
-              "Lantern"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
-              "Pen"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "LaundryRoom",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "LaundryRoom"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Pen": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Hannah",
-            "Umbrella": "Fiona"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Blanket": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -1366,164 +1393,165 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Charlie",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
+            "name": "Blanket",
             "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Flashlight",
-            "is_held": false,
-            "holder": null,
-            "location": "Office"
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Hannah",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Shoes"
+              "Blanket",
+              "BottleCap",
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [
-              "Lantern"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
-              "Pen"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet",
+              "Coin"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Pen": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Hannah",
-            "Umbrella": "Fiona"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Charlie",
+            "Blanket": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -1533,163 +1561,164 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Charlie",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
-            "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
-          },
-          {
-            "name": "Flashlight",
+            "name": "Blanket",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Kitchen"
+          },
+          {
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Hannah",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [
-              "Shoes"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [
-              "Lantern"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
               "BottleCap",
-              "Pen"
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet",
+              "Coin"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom",
+            "Blanket": "Kitchen"
           },
           "object_holder": {
-            "BottleCap": "Umar",
-            "Pen": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Hannah",
-            "Umbrella": "Fiona"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Charlie",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -1699,163 +1728,164 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Charlie",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
-            "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
-          },
-          {
-            "name": "Flashlight",
+            "name": "Blanket",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Kitchen"
+          },
+          {
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Hannah",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [
-              "Shoes"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [
-              "Lantern"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
               "BottleCap",
-              "Pen"
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet",
+              "Coin"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom",
+            "Blanket": "Kitchen"
           },
           "object_holder": {
-            "BottleCap": "Umar",
-            "Pen": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Hannah",
-            "Umbrella": "Fiona"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Charlie",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -1865,162 +1895,164 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Charlie",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
             "is_held": false,
             "holder": null,
-            "location": "Playroom"
+            "location": "Garage"
           },
           {
-            "name": "Umbrella",
-            "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
-          },
-          {
-            "name": "Flashlight",
+            "name": "Blanket",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Kitchen"
+          },
+          {
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [
-              "Lantern",
-              "Shoes"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
               "BottleCap",
-              "Pen"
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet",
+              "Coin"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Notebook": "Playroom",
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom",
+            "Blanket": "Kitchen"
           },
           "object_holder": {
-            "BottleCap": "Umar",
-            "Pen": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Peter",
-            "Umbrella": "Fiona"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Charlie",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -2030,163 +2062,164 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
-            "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Umbrella",
-            "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
-          },
-          {
-            "name": "Flashlight",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Garage"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Kitchen"
+          },
+          {
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Lantern",
-              "Shoes",
-              "Notebook"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
+              "Coin",
               "BottleCap",
-              "Pen"
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "Courtyard"
           },
           "object_location": {
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom",
+            "Blanket": "Kitchen"
           },
           "object_holder": {
-            "BottleCap": "Umar",
-            "Pen": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Peter",
-            "Umbrella": "Fiona",
-            "Notebook": "Peter"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -2196,162 +2229,164 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
-            "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Umbrella",
-            "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
-          },
-          {
-            "name": "Flashlight",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Garage"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Kitchen"
+          },
+          {
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
-            "is_held": false,
-            "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
+            "name": "Card",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": false,
-            "holder": null,
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "holder": "Diana",
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Lantern",
-              "Shoes",
-              "Notebook"
+              "Coin",
+              "BottleCap",
+              "Card"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Bathroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Bathroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "LockerRoom"
           },
           "object_location": {
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom",
-            "Pen": "Roof"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom",
+            "Blanket": "Kitchen"
           },
           "object_holder": {
-            "BottleCap": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Peter",
-            "Umbrella": "Fiona",
-            "Notebook": "Peter"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana",
+            "Card": "Diana"
           }
         }
       }
@@ -2361,162 +2396,163 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
-            "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Umbrella",
-            "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
-          },
-          {
-            "name": "Flashlight",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Garage"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Kitchen"
+          },
+          {
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
             "is_held": true,
-            "holder": "Umar",
-            "location": "Roof"
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
+            "name": "Card",
             "is_held": false,
             "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
-            "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": false,
-            "holder": null,
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Lantern",
-              "Shoes",
-              "Notebook"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [
+              "Coin",
               "BottleCap"
             ],
             "is_holding_object": true
           },
           {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Playroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "LockerRoom"
           },
           "object_location": {
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom",
-            "Pen": "Roof"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom",
+            "Blanket": "Kitchen",
+            "Card": "Kitchen"
           },
           "object_holder": {
-            "BottleCap": "Umar",
-            "Lantern": "Peter",
-            "Shoes": "Peter",
-            "Umbrella": "Fiona",
-            "Notebook": "Peter"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Candle": "Yusuf",
+            "BottleCap": "Diana"
           }
         }
       }
@@ -2526,162 +2562,162 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Diana",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
-            "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Umbrella",
-            "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
-          },
-          {
-            "name": "Flashlight",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Garage"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Kitchen"
+          },
+          {
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
-            "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "is_held": false,
+            "holder": null,
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
+            "name": "Card",
             "is_held": false,
             "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
-            "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": false,
-            "holder": null,
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [
-              "Lantern",
-              "Shoes",
-              "Notebook"
+              "Coin"
             ],
             "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
-            "holding_objects": [],
-            "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Playroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "LockerRoom"
           },
           "object_location": {
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom",
-            "Pen": "Roof"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom",
+            "Blanket": "Kitchen",
+            "Card": "Kitchen",
+            "BottleCap": "Kitchen"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Lantern": "Peter",
-            "Shoes": "Peter",
-            "Umbrella": "Fiona",
-            "Notebook": "Peter"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Diana",
+            "Candle": "Yusuf"
           }
         }
       }
@@ -2691,162 +2727,161 @@
       "snapshot": {
         "objects": [
           {
-            "name": "Lantern",
+            "name": "Tablet",
             "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
+            "holder": "Charlie",
+            "location": "Kitchen"
+          },
+          {
+            "name": "Pillow",
+            "is_held": true,
+            "holder": "Fiona",
+            "location": "LockerRoom"
+          },
+          {
+            "name": "Bottle",
+            "is_held": false,
+            "holder": null,
+            "location": "MusicRoom"
+          },
+          {
+            "name": "Coin",
+            "is_held": true,
+            "holder": "Charlie",
+            "location": "Kitchen"
           },
           {
             "name": "Notebook",
-            "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Umbrella",
-            "is_held": true,
-            "holder": "Fiona",
-            "location": "Office"
-          },
-          {
-            "name": "Flashlight",
             "is_held": false,
             "holder": null,
-            "location": "Office"
+            "location": "Garage"
+          },
+          {
+            "name": "Blanket",
+            "is_held": false,
+            "holder": null,
+            "location": "Kitchen"
+          },
+          {
+            "name": "Candle",
+            "is_held": true,
+            "holder": "Yusuf",
+            "location": "RecordRoom"
           },
           {
             "name": "BottleCap",
-            "is_held": true,
-            "holder": "Rachel",
-            "location": "Roof"
+            "is_held": false,
+            "holder": null,
+            "location": "Kitchen"
           },
           {
-            "name": "Jacket",
+            "name": "Map",
             "is_held": false,
             "holder": null,
             "location": "LockerRoom"
           },
           {
-            "name": "Wallet",
+            "name": "Card",
             "is_held": false,
             "holder": null,
-            "location": "LockerRoom"
-          },
-          {
-            "name": "Shoes",
-            "is_held": true,
-            "holder": "Peter",
-            "location": "Playroom"
-          },
-          {
-            "name": "Pen",
-            "is_held": false,
-            "holder": null,
-            "location": "Roof"
-          },
-          {
-            "name": "Key",
-            "is_held": false,
-            "holder": null,
-            "location": "Greenhouse"
+            "location": "Kitchen"
           }
         ],
         "entities": [
           {
-            "name": "Hannah",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Peter",
-            "location": "Playroom",
-            "holding_objects": [
-              "Lantern",
-              "Shoes",
-              "Notebook"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Umar",
-            "location": "Roof",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Alice",
-            "location": "Reception",
+            "name": "Diana",
+            "location": "Kitchen",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Rachel",
-            "location": "Roof",
-            "holding_objects": [
-              "BottleCap"
-            ],
-            "is_holding_object": true
-          },
-          {
-            "name": "Delia",
-            "location": "Bedroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Quentin",
-            "location": "LockerRoom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Xenia",
-            "location": "Playroom",
-            "holding_objects": [],
-            "is_holding_object": false
-          },
-          {
-            "name": "Aaron",
-            "location": "Bedroom",
+            "location": "Classroom",
             "holding_objects": [],
             "is_holding_object": false
           },
           {
             "name": "Fiona",
-            "location": "Office",
+            "location": "LockerRoom",
             "holding_objects": [
-              "Umbrella"
+              "Pillow"
             ],
             "is_holding_object": true
+          },
+          {
+            "name": "Aaron",
+            "location": "RecordRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Wesley",
+            "location": "Classroom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "George",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Charlie",
+            "location": "Kitchen",
+            "holding_objects": [
+              "Tablet",
+              "Coin"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Yusuf",
+            "location": "RecordRoom",
+            "holding_objects": [
+              "Candle"
+            ],
+            "is_holding_object": true
+          },
+          {
+            "name": "Ivy",
+            "location": "Courtyard",
+            "holding_objects": [],
+            "is_holding_object": false
+          },
+          {
+            "name": "Jack",
+            "location": "LockerRoom",
+            "holding_objects": [],
+            "is_holding_object": false
           }
         ],
         "relations": {
           "entity_location": {
-            "Hannah": "Playroom",
-            "Peter": "Playroom",
-            "Umar": "Roof",
-            "Alice": "Reception",
-            "Rachel": "Roof",
-            "Delia": "Bedroom",
-            "Quentin": "LockerRoom",
-            "Xenia": "Playroom",
-            "Aaron": "Bedroom",
-            "Fiona": "Office"
+            "Diana": "Kitchen",
+            "Rachel": "Classroom",
+            "Fiona": "LockerRoom",
+            "Aaron": "RecordRoom",
+            "Wesley": "Classroom",
+            "George": "LockerRoom",
+            "Charlie": "Kitchen",
+            "Yusuf": "RecordRoom",
+            "Ivy": "Courtyard",
+            "Jack": "LockerRoom"
           },
           "object_location": {
-            "Flashlight": "Office",
-            "Jacket": "LockerRoom",
-            "Key": "Greenhouse",
-            "Wallet": "LockerRoom",
-            "Pen": "Roof"
+            "Bottle": "MusicRoom",
+            "Notebook": "Garage",
+            "Map": "LockerRoom",
+            "Blanket": "Kitchen",
+            "Card": "Kitchen",
+            "BottleCap": "Kitchen"
           },
           "object_holder": {
-            "BottleCap": "Rachel",
-            "Lantern": "Peter",
-            "Shoes": "Peter",
-            "Umbrella": "Fiona",
-            "Notebook": "Peter"
+            "Tablet": "Charlie",
+            "Pillow": "Fiona",
+            "Coin": "Charlie",
+            "Candle": "Yusuf"
           }
         }
       }

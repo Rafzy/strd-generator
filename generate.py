@@ -74,7 +74,7 @@ def print_simulation(episode: dict) -> None:
 
 
 def run_test(episode_id: str):
-    sim = Simulation(max_steps=45)
+    sim = Simulation(max_steps=25, seed=123)
     action_weights: dict[Actions, float] = {
         "move": 0.20,
         "pick": 0.30,

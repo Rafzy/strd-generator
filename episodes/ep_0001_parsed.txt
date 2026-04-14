@@ -1,0 +1,31 @@
+At the beginning, Isaac and Ivy were in the Reception.
+Tina and Grace were in the Pantry.
+Xenia was in the Terrace.
+Michael was in the Classroom.
+Victoria was in the Closet.
+Delia was in the Workshop.
+Laura was in the Living Room.
+Sophia was in the Basement.
+Delia was holding the Bottle in the Workshop.
+Sophia was holding the Fork in the Basement.
+Tina was holding the Scarf, the Towel, and the Knife in the Pantry.
+Laura was holding the Bottle Cap in the Living Room.
+Grace was holding the Puzzle in the Pantry.
+the Flashlight were in the Terrace.
+the Hat were in the Study.
+the Tablet were in the Basement.
+[Action 1] First, Ivy went from the Reception to the Workshop.
+[Action 2] After that, while in the Pantry, Tina passed the Towel to Grace.
+[Action 3] Afterward, Grace handed the Puzzle to Tina in the Pantry.
+[Action 4] Then, Laura moved from the Living Room to the Terrace.
+[Action 5] Next, while in the Terrace, Xenia picked up the Flashlight.
+[Action 6] Soon afterward, Tina handed the Scarf to Xenia in the Pantry.
+[Action 7] Then, while in the Basement, Sophia picked up the Tablet.
+[Action 8] Later, while in the Pantry, Tina passed the Scarf to Grace.
+[Action 9] Then, Sophia moved from the Basement to the Pantry.
+[Action 10] Then, while in the Pantry, Tina put down the Knife.
+[Action 11] Then, while in the Pantry, Tina picked up the Knife.
+[Action 12] After that, Xenia dropped the Flashlight in the Terrace.
+[Action 13] Soon afterward, while in the Pantry, Sophia passed the Tablet to Tina.
+[Action 14] Then, Tina dropped the Knife in the Pantry.
+[Action 15] Then, Tina handed the Tablet to Michael in the Pantry.

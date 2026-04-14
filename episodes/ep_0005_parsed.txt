@@ -1,0 +1,77 @@
+At the beginning, Umar and George were in the Laundry Room.
+Ivy was in the Playroom.
+William and Xenia were in the Lobby.
+Hannah was in the Greenhouse.
+Uma was in the Gym.
+Peter and Ethan were in the Server Room.
+Tina and Michael were in the Observatory.
+Henry was in the Balcony.
+Bianca was in the Bedroom.
+Noah was in the Bathroom.
+Diana was in the Security Room.
+Aaron, Yusuf, Victoria, and Laura were in the Parking Lot.
+Fiona was in the Mail Room.
+Fiona was carrying the Charger in the Mail Room.
+William was holding the Glasses in the Lobby.
+Aaron was carrying the Spoon in the Parking Lot.
+Yusuf had the Ball with them in the Parking Lot.
+Bianca was holding the Tablet in the Bedroom.
+Victoria was holding the Bottle Cap in the Parking Lot.
+Peter had the Fork with them in the Server Room.
+Michael was holding the Hat in the Observatory.
+Hannah was carrying the Brush in the Greenhouse.
+The book was lying in the Laundry Room.
+The toy was lying in the Dining Room.
+The folder was lying in the Playroom.
+The knife and the notebook were lying in the Lobby.
+The comb was lying in the Roof.
+The flashlight was lying in the Greenhouse.
+The letter was lying in the Gym.
+The bottle was lying in the Kitchen.
+The lantern was lying in the Observatory.
+The plate was lying in the Locker Room.
+[Action 1] At first, Aaron handed the Spoon to Victoria in the Parking Lot.
+[Action 2] Soon afterward, William picked up the Notebook in the Lobby.
+[Action 3] Then, Hannah picked up the Flashlight in the Greenhouse.
+[Action 4] Soon afterward, Fiona set the Charger down in the Mail Room.
+[Action 5] Then, still in the Mail Room, Fiona picked up the Charger.
+[Action 6] After that, while in the Parking Lot, Yusuf gave the Ball to Aaron.
+[Action 7] Soon afterward, Victoria handed the Bottle Cap to Yusuf in the Parking Lot.
+[Action 8] Afterward, still in the Parking Lot, Victoria handed the Spoon to Yusuf.
+[Action 9] After that, while in the Parking Lot, Yusuf gave the Spoon to Victoria.
+[Action 10] Before long, while in the Greenhouse, Hannah put the Brush down.
+[Action 11] Then, while in the Lobby, William gave the Notebook to Xenia.
+[Action 12] Afterward, Peter passed the Fork to Ethan in the Server Room.
+[Action 13] Then, Diana moved from the Security Room to the Laundry Room.
+[Action 14] After that, Laura left the Parking Lot and headed to the Bathroom.
+[Action 15] Next, Henry went from the Balcony to the Security Room.
+[Action 16] Soon afterward, Xenia dropped the Notebook in the Lobby.
+[Action 17] Afterward, Aaron handed the Ball to Victoria in the Parking Lot.
+[Action 18] Soon afterward, while in the Observatory, Michael picked up the Lantern.
+[Action 19] Afterward, still in the Observatory, Michael handed the Lantern to Tina.
+[Action 20] Then, Hannah picked the Brush up in the Greenhouse.
+[Action 21] Afterward, William picked the Notebook up in the Lobby.
+[Action 22] After that, Ethan passed the Fork to Peter in the Server Room.
+[Action 23] Then, while in the Parking Lot, Victoria gave the Spoon to Aaron.
+[Action 24] Before long, Xenia picked up the Knife in the Lobby.
+[Action 25] Soon afterward, George picked up the Book in the Laundry Room.
+[Action 26] Afterward, Aaron handed the Spoon to Victoria in the Parking Lot.
+[Action 27] Later, Henry left the Security Room and headed to the Server Room.
+[Action 28] Afterward, Yusuf set the Bottle Cap down in the Parking Lot.
+[Action 29] Next, Xenia set the Knife down in the Lobby.
+[Action 30] Afterward, George passed the Book to Umar in the Laundry Room.
+[Action 31] Next, while in the Parking Lot, Aaron picked up the Bottle Cap.
+[Action 32] After that, Ivy picked up the Folder in the Playroom.
+[Action 33] Before long, William picked up the Knife in the Lobby.
+[Action 34] Then, while in the Parking Lot, Victoria gave the Ball to Yusuf.
+[Action 35] Later, while in the Greenhouse, Hannah put the Brush down.
+[Action 36] Soon afterward, William set the Notebook down in the Lobby.
+[Action 37] Before long, while in the Greenhouse, Hannah picked up the Brush.
+[Action 38] Next, while in the Lobby, William gave the Glasses to Xenia.
+[Action 39] Then, Xenia moved from the Lobby to the Balcony.
+[Action 40] Afterward, Umar passed the Book to Diana in the Laundry Room.
+[Action 41] After that, while in the Lobby, William picked up the Notebook.
+[Action 42] Next, while in the Gym, Uma picked up the Letter.
+[Action 43] Soon afterward, Peter handed the Fork to Ethan in the Server Room.
+[Action 44] Before long, Hannah moved from the Greenhouse to the Locker Room.
+[Action 45] Soon afterward, while in the Gym, Uma put the Letter down.

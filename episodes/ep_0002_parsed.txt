@@ -1,0 +1,29 @@
+At the beginning, Uma was in the Gym.
+Zara and Paula were in the Archive.
+Oliver, Maya, Laura, and Bianca were in the Locker Room.
+Thomas and Jack were in the Attic.
+Kara was in the Playroom.
+Paula was holding the Card and the Wallet in the Archive.
+Uma was holding the Towel in the Gym.
+Thomas was holding the Pen in the Attic.
+Laura was holding the Ring in the Locker Room.
+Kara was holding the Ticket in the Playroom.
+Maya was holding the Glasses in the Locker Room.
+the Bottle were in the Playroom.
+the Bottle Cap were in the Library.
+the Apple were in the Balcony.
+[Action 1] First, Paula went from the Archive to the Locker Room.
+[Action 2] After that, Kara picked up the Bottle in the Playroom.
+[Action 3] Afterward, Paula handed the Card to Oliver in the Locker Room.
+[Action 4] Then, Oliver dropped the Card in the Locker Room.
+[Action 5] Next, Paula dropped the Wallet in the Locker Room.
+[Action 6] Soon afterward, Uma dropped the Towel in the Gym.
+[Action 7] Then, Laura handed the Ring to Maya in the Locker Room.
+[Action 8] Later, Paula picked up the Wallet in the Locker Room.
+[Action 9] Then, while in the Locker Room, Laura picked up the Card.
+[Action 10] Then, while in the Playroom, Kara put down the Bottle.
+[Action 11] Then, while in the Gym, Uma picked up the Towel.
+[Action 12] After that, Laura moved from the Locker Room to the Library.
+[Action 13] Soon afterward, Kara picked up the Bottle in the Playroom.
+[Action 14] Then, while in the Library, Laura picked up the Bottle Cap.
+[Action 15] Then, Oliver moved from the Locker Room to the Attic.
